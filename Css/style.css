@@ -1,0 +1,30 @@
+.btn{
+  width: auto;
+  float: right;
+  margin-right: 5%;
+}
+.menu{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 43.35%;
+  width: 13.3%;
+}
+.Formulario{
+  height: 45%;
+  width: 40%;
+  margin-left: 30%;
+  box-shadow: 2px 2px 5px  5px #4444;
+  padding: 1%;
+  border-radius: 10px;
+}
+
+.Formulario h2{
+margin-left: 37.5%;
+  font-size: 60;
+  font-family: 'Topzera';
+  color: #0FF;
+}
+.pesquisa{
+    width: 100%;
+    border-radius:5px;
+}
