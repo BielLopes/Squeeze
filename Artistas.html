@@ -1,0 +1,78 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Css/w3.css">
+	<title></title>
+</head>
+<body>
+			<h2>Recomendações</h2>
+			
+	<section id="AtalhoPesquisa" >
+  <div class="w3-bar w3-border-bottom w3-light-grey intronav">
+    <ul class="w3-navbar w3-card-3 w3-white ">
+      <li><a onclick="openC('Ranq')">Os Mais Badalados</a></li>
+      <li><a onclick="openC('Ordem')">Em Ordem</a></li>
+    </ul>
+  </div>
+  <div id="Ranq" class="w3-container city w3-animate-opacity">
+    	<!--Colocar com PHP uma quantidade Limitada de Artistas-->
+      		<ul>
+				<li>
+					<!--Colocar com PHP os Artistas mais favoritados em Ordem-->
+					<div id="Artista">
+					
+					<h2>Pitty</h2>
+						<img src="Artista.jpg">
+						<form>
+							<input type="hidden" name="id" value="PHP">
+							<button type="submit">Favoritar</button>
+						</form>
+						<p>Amigos que favoritaram</p>
+						<!--Criar com CSS uma forma de dysplay: block; na ul e colocar regras de construção que se adaptem-->
+						<ul>
+							<li>Jão das couves</li>
+							<li>Jãozinho</li>
+							<li>Jé Pequeno</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+  </div>
+
+  <div id="Ordem" class="w3-container city w3-animate-opacity" style="display:none">
+    		<ul>
+				<li>
+					<!--Colocar com PHP os Artistas em Ordem Alfabética-->
+					<div id="Artista">
+					<h2>Pitty</h2>
+						<img src="Artista.jpg">
+						<form>
+							<input type="hidden" name="id" value="PHP">
+							<button type="submit">Favoritar</button>
+						</form>
+						<p>Amigos que favoritaram</p>
+						<!--Criar com CSS uma forma de dysplay: block; na ul e colocar regras de construção que se adaptem-->
+						<ul>
+							<li>Jão das couves</li>
+							<li>Jãozinho</li>
+							<li>Jé Pequeno</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+  </div>
+  <script>
+  function openC(cityName) {
+      var i;
+      var x = document.getElementsByClassName("city");
+      for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+      }
+      document.getElementById(cityName).style.display = "block";
+  }
+  </script>
+			
+	</section>
+</body>
+</html>

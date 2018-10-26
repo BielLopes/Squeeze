@@ -4,6 +4,112 @@
 	<title>Inicial</title>
 </head>
 <body>
+	<header>
+		<nav class="menu">
+			<ul>
+				<li><a href="HomePage.html">Página Inicial</a></li>
+				<li><a href="Favoritos.html">Favoritos</a></li>
+				<li><a href="Recomendacoes.html">Recomendações</a></li>
+				<li><a href="Artitas.html">Artistas</a></li>
+				<li><a href="Genero.html">Gêneros Musicais</a></li>
+				<li>
+					<form>
+						<input type="search" name="" placeholder="Pesquisar...">
+					</form>
+				</li>
+				<li><img src="" alt="logo"></li>
+				<li>Sair</li>			
+			</ul>
+			
+		</nav>
+	</header>
+	<section>
+		<ul>
+			<li><h2>Nome de Usuário</h2></li>
+			<li><h2>Login</h2></li>
+			<li><h2>E-mail Cadastrado</h2></li>
+		</ul>
+	</section>
+	<section>
+		<form action="UpdatePrefer.php" method="post">
+		<input type="checkbox" name="PHP" value="ID_PHP">Gospel<br>
+		<input type="checkbox" name="PHP" value="ID_PHP"> Clásica<br>
+		<input type="checkbox" name="PHP" value="ID_3PHP" checked>Metal<br>
+		<button type="submit">Salvar</button>
+	</form>
+	</section>
+	<section>
+		<div>
+			<h2>Ultimos Aritas Favoritados</h2>
+			<ul>
+				<li>
+					<div id="Artista">
+						<h2>Pitty</h2>
+						<img src="Images/Artista.jpg">
+						<form>
+							<input type="hidden" name="id" value="PHP">
+							<button type="submit">Favoritar</button>
+						</form>
+						<p>Amigos que favoritaram</p>
+						<!--Criar com CSS uma forma de dysplay: block; na ul e colocar regras de construção que se adaptem-->
+						<ul>
+							<li>Jão das couves</li>
+							<li>Jãozinho</li>
+							<li>Jé Pequeno</li>
+						</ul>
+					</div>
+				</li>
 
+				<li>
+					<!--Mais artista colocados dinâmicamente-->
+				</li>
+			</ul>
+		</div>
+	</section>
+		<section id="Amigos">
+		<div id="AmigosAtual">
+			<h2>Amigos Atuais</h2><br/>
+			<ul>
+				<!--Colocar os amigo dinâmicamente-->
+				<li>
+					<h5>PHP - Joao da Couves</h5>
+					<a style="float:right;" onclick="deletar(PHP)"><img  src="Images/delete"> </a>
+				</li>
+				<li>
+					
+				</li>
+			</ul>
+		</div>
+		<div>
+			<form method="post">
+				<input id="pesqu" type="text" name="pesq" placeholder="Pesquisar">
+				<button type="submit" >Pesquisar</button>
+			</form>
+		</div>
+		<div id="resultado" style="display:none;">
+			<h2>Pesquisa</h2><br/>
+			<ul>
+				<!--Colocar os amigo dinâmicamente-->
+				<li>
+					<h5>PHP - Joao da Couves</h5>
+					<a style="float:right;" onclick="deletar(PHP)"><img  src="Images/delete"> </a>
+				</li>
+				<li>
+					
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section>
+			<h2>Alterar Senha:</h2>
+			<form action="Components/Confimacao2.html">
+				<input type="text" placeholder="Senha Atual"><br>
+				<input type="text" placeholder="Nova Senha"><br>
+				<input type="text" placeholder="Confirma&ccedil;&atilde;o"><br>
+				<button type="submit">Confirmar</button>
+			</form>
+	</section>
+	<a href="Confirmacao.html"><button>Cancelar conta</button></a>
+	
 </body>
 </html>

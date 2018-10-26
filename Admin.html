@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Squeeze Admin</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<h1>Pagina do Admin</h1>
+	<p>Adicione um artista</p>
+	<form action="">
+		<input type="text"  name ="nome"placeholder="Nome"><br>
+		<br/>
+		<h3>Gênero:</h3>
+		<br/>
+		<input list="Gener" name="Generos">
+		  <datalist id="Gener">
+		  	<!--Alocar todos os gêneros cadastrados-->
+      		<option  value="PHP" checked>Metal</option>
+      		<option  value="PHP">POP</option>
+      		<option  value="PHP">Axe</option>
+  		</datalist>
+		<button action="">Adicionar</button><br>
+	</form>
+
+	<p>Todos os artistas</p>
+	<table>
+		<tr>
+			<th>Nome</th>
+			<th>Gênero</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td>Lady Gaga</td>
+			<td>POP</td>
+			<td>
+				<form action="AlteracaoArtist.html" method="get">
+					<button type="submit">Alterar</button></td>
+				</form>
+			<td>
+				<form action="Components/Confirmacao.html" method="get">
+					<button type="submit">Excluir</button>
+				</form>
+				</td>
+		</tr>
+	</table><br>
+	
+	<p>Adicione um Gênero</p>
+	<form action="">
+		<input type="text" name="" placeholder="Gênero"><br>
+		<button action="">Adicionar</button><br>
+	</form>
+
+	<p>Todos os Gêneros</p>
+	<table>
+		<tr>
+			<th>Gênero</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<td>POP</td>
+			<td>
+				<form action="AlteraGene.html" method="get">
+					<button type="submit">Alterar</button>
+				</form>
+			</td>	
+			<td><button><a href="Components/Confirmacao.html">Excluir</a></button></td>
+		</tr>
+	</table><br>
+
+	<button><a href=="">Sair</a></button>
+
+</body>
+</html>
