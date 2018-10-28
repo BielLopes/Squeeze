@@ -2,24 +2,33 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="../Css/components.css" type="text/css">
+	<link rel="stylesheet" href="../Css/reset.css" type="text/css">
+	<link rel="stylesheet" href="../Fontes/stylesheet.css" type="text/css">
+	<link rel="stylesheet" href="../Css/w3.css" type="text/css">
 	<title>Conponentes de Artista e Genêro</title>
 </head>
 <body>
 	<!--Artista-->
-	<div id="Artista">
+	<div class="component">
+		<img src="../Images/Artista.jpg">
 		<h2>Pitty</h2>
-		<img src="Artista.jpg">
-		<form>
+	
+		<form method="GET">
 			<input type="hidden" name="id" value="PHP">
-			<button type="submit">Favoritar</button>
+			<button class="btn w3-btn w3-blue" type="submit">Favoritar</button>
 		</form>
-		<p>Amigos que favoritaram</p>
-		<!--Criar com CSS uma forma de dysplay: block; na ul e colocar regras de construção que se adaptem-->
-		<ul>
-			<li>Jão das couves</li>
-			<li>Jãozinho</li>
-			<li>Jé Pequeno</li>
-		</ul>
+		<nav>
+			<ul >
+			  <li >Amigos que Favoritaram
+				<ul>
+					<li>Jão das couves</li>
+					<li>Jãozinho</li>
+					<li>Jé Pequeno</li>
+				</ul>
+			  </li>
+		  </ul>
+		</nav>
 	</div>
 
 
@@ -28,11 +37,43 @@
 
 
 	<!--Genêro-->
-	<div id="Genero">
+	<div class="component">
+			<img src="../Images/Genero.jpg">
 		<h2>Rock</h2>
-		<img src="Genero.jpg">
 		<!--Apenas se não for muito didicil-->
-		<p>Artistas Desse Gênero</p>
+		<!--<p>Artistas Desse Gênero</p>-->
+		<!--<nav>
+				<ul >
+				  <li>Artistas
+					<ul>
+						<li>
+							<div class="component2">
+								<img src="../Images/Artista.jpg">
+								<h2>Pitty</h2>
+								<form method="GET">
+									<input type="hidden" name="id" value="PHP">
+									<button class="btn w3-btn w3-blue" type="submit">Favoritar</button>
+								</form>
+								<nav>
+									<ol>
+										<li >Amigos que Favoritaram
+										<ol>
+											<li>Jão das couves</li>
+											<li>Jãozinho</li>
+											<li>Jé Pequeno</li>
+										</ol>
+										</li>
+									</ol>
+								</nav>
+							</div>
+						</li>
+						<li></li>
+						<li></li>
+					</ul>
+				  </li>
+			  </ul>
+			</nav>
+			-->
 		<!--Criar com CSS uma forma de dysplay: block; na ul e colocar regras de construção que se adaptem-->
 		<!--<ul>
 			<li>
@@ -93,13 +134,17 @@
 
 		-->
 		
-		<p>Amigos que favoritaram</p>
-		<!--Criar com CSS uma forma de dysplay: block; na ul e colocar regras de construção que se adaptem-->
-		<ul>
-			<li>Jão das couves</li>
-			<li>Jãozinho</li>
-			<li>Jé Pequeno</li>
-		</ul>
+		<nav>
+				<ul >
+				  <li >Amigos que Preferem
+					<ul>
+						<li>Jão das couves</li>
+						<li>Jãozinho</li>
+						<li>Jé Pequeno</li>
+					</ul>
+				  </li>
+			  </ul>
+			</nav>
 	</div>
 </body>
 </html>
