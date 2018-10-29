@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="Css/components.css" type="text/css">
+	<link rel="stylesheet" href="Css/Confirma.css" type="text/css">
 	<link rel="stylesheet" href="Css/Inicial.css" type="text/css">
 	<link rel="stylesheet" href="Css/reset.css" type="text/css">
 	<link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
@@ -10,6 +11,42 @@
 	<title>Inicial</title>
 </head>
 <body class="Fundo">
+	<!--Todos os Alertes e Confirmations nessa Parte-->
+			<!--Excluir Conta-->
+			<div id="exclude" class="w3-modal">
+				<div class="Formular">
+					<span onclick="sumir('exclude')" class="w3-closebtn">&times;</span>
+					<h1>Você tem certeza que deseja excluir Sua Conta?</h1>
+					<form action="calncelaConta.php">
+						<input type="hidden" value="ID_PHP">
+						<button class="btn5 w3-btn w3-blue" action="">Deletar</button>
+						<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('exclude')">Cancelar</button>
+					</form>
+				</div>
+			</div>
+		<!--Alterar Senha-->
+		<div id="Alterada" class="w3-modal">
+			<div class="Formular">
+				<span onclick="sumir('Alterada')" class="w3-closebtn">&times;</span>
+				<h1>Senha Alterada com Sucesso</h1>
+			</div>
+		</div>
+		<div id="InAlterada" class="w3-modal">
+			<div class="Formular">
+				<span onclick="sumir('InAlterada')" class="w3-closebtn">&times;</span>
+				<h1>Não Foi Possivel Alterar a Senha: Informações Incorretas</h1>
+			</div>
+		</div>	
+		<!--Alterar Preferências-->
+			<div id="ChangePrefer" class="w3-modal">
+				<div class="Formular">
+					<span onclick="sumir('ChangePrefer')" class="w3-closebtn">&times;</span>
+					<h1>Preferências Alteradas com Sucesso</h1>
+				</div>
+			</div>
+
+
+
 	<div id="BackToTop">
 		<a href="#Preferencias1"><img src="Images/backtotop.png"></a>
 	</div>
@@ -61,7 +98,15 @@
 				</tr>
 			</table>
 			<a name="UltFavoritados"></a>
-			<button class="btn w3-btn w3-blue" type="submit">Salvar</button>
+			<button onclick="aparecer('AlterarPrefer')" class="btn w3-btn w3-blue" type="button">Salvar</button>
+				<div id="AlterarPrefer" class="w3-modal">
+					<div class="Formular">
+						<span onclick="sumir('AlterarPrefer')" class="w3-closebtn">&times;</span>
+						<h1>Você tem certeza que deseja alterar suas Preferências?</h1>
+						<button class="btn5 w3-btn w3-blue" type="submit">Alterar</button>
+						<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('AlterarPrefer')">Cancelar</button>
+					</div>
+				</div>
 		</form>
 		
 	</section>
@@ -190,26 +235,34 @@
 				<td>
 					<h2>Alterar Senha:</h2>
 					<form action="Components/Confimacao2.html">
+						
 						<label class="w3-text-blue"><b>Senah Atual</b></label>
-      					<input class="w3-input w3-border" type="text" placeholder="Senha Atual">
+      					<input class="w3-input w3-border" type="password" placeholder="Senha Atual">
 
 						<label class="w3-text-blue"><b>Nova Senha</b></label>
-      					<input class="w3-input w3-border" type="text" placeholder="Nova Atual">
+      					<input class="w3-input w3-border" type="password" placeholder="Nova Atual">
 
       					<label class="w3-text-blue"><b>Confirmar Nova Senha</b></label>
-      					<input class="w3-input w3-border" type="text" placeholder="Confirmar Nova Atual">	
-						<button type="submit" class=" btn w3-btn w3-blue">Confirmar</button>
+      					<input class="w3-input w3-border" type="password" placeholder="Confirmar Nova Atual">	
+						<button type="button" onclick="aparecer('AlterarSenha')" value="Nenhum" class="btn w3-btn w3-blue">Salvar</button>
+							<div id="AlterarSenha" class="w3-modal">
+								<div class="Formular">
+									<span onclick="sumir('AlterarSenha')" class="w3-closebtn">&times;</span>
+									<h1>Você tem certeza que deseja alterar sua senha?</h1>
+									<button class="btn5 w3-btn w3-blue" type="submit">Alterar</button>
+									<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('AlterarSenha')">Cancelar</button>
+								</div>
+							</div>
 					</form>
 				</td>
 				<td>
-					<form class="NoFim" action="Confirmacao.html" method="post">
-						<button type="submit" class="btn3 w3-btn w3-red">Cancelar <br/> conta</button>
-					</form>
+					<button onclick="aparecer('exclude')" class=" NoFim btn3 w3-btn w3-red">Cancelar <br/> Conta</button>
 				</td>
 				
 			</tr>
-		</table>	
-	</section>
+		</table>
+			
+	</section>			
 	<script language="Javascript">
 		function sumir(i) {
 			document.getElementById(i).style.display = "none";
@@ -220,6 +273,5 @@
 		
 		}
 	</script>
-		
 </body>
 </html>

@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="Fontes/stylesheet.css">
-  <link rel="stylesheet" href="Css/w3.css">
+  <link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
+  <link rel="stylesheet" href="Css/w3.css" type="text/css">
   <link rel="stylesheet" href="Css/style.css" type="text/css">
   <title>Index.html</title>
 </head>
@@ -11,19 +11,33 @@
 <header>
   <nav class="menu">
   <ul class="w3-navbar w3-card-2 w3-white">
-    <li ><a href="HomePage.html">Home</a></li>
+    <li ><a onclick="aparecer('Login')">Home</a></li>
     <li><a href="Cadastro.html">Cadastro</a></li>
   </ul>
 </nav>
 </header>
-<div class="Formulario">
-  <h2>Login</h2>
-  <form  name="e-mail" action="" method="post">
-  <input type="email" class="pesquisa w3-input w3-border" name="e-mail" placeholder="Login"></br>
-  <input type="password" class="pesquisa w3-input w3-border" name="Senha" placeholder="Senha"></br>
-  <a href="PaginaInicial.html"><button type="submit" class="btn w3-btn w3-blue w3-round" name="submeter">Entrar</button></a>
-  </form>
-
+<div id="Login" class="w3-modal">
+    
+  <div class="Formulario">
+    <span onclick="document.getElementById('Login').style.display='none'" class="w3-closebtn">&times;</span>
+    <h2>Login</h2>
+    <form  name="e-mail" action="PaginaInicial.html" method="post">
+      <input type="email" class="pesquisa w3-input w3-border" name="e-mail" placeholder="Login"></br>
+      <input type="password" class="pesquisa w3-input w3-border" name="Senha" placeholder="Senha"></br>
+      <button type="submit" class="btn w3-btn w3-blue w3-round" name="submeter">Entrar</button>
+    </form>
+  </div>
 </div>
+
+<script language="Javascript">
+  function sumir(i) {
+    document.getElementById(i).style.display = "none";
+  }
+  
+  function aparecer(i) {
+    document.getElementById(i).style.display = "initial";
+  
+  }
+</script>
 </body>
 </html>

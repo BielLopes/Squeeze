@@ -2,10 +2,23 @@
 <html>
 <head>
 	<title>Squeeze</title>
-	<charset=utf'8'>
+	<link rel="stylesheet" href="../Fontes/stylesheet.css" type="text/css">
+  	<link rel="stylesheet" href="../Css/w3.css" type="text/css" >
+  	<link rel="stylesheet" href="../Css/Confirma.css" type="text/css">
 </head>
 <body>
-	<h3>Você tem certeza que deseja alterar sua senha?</h3>
-	<button action="">Continuar</button><button><a href="TrocaDeSenha.html">Cancelar</button>
+
+	<div class="Formular" style="margin-top:5%;">
+		<h1>Você tem certeza que deseja alterar?</h1>
+		<form action="altera.php">
+			<input type="hidden" name="Artista/Genero" value="PHP">
+			<input type="hidden" name="GeneroArtista" value="PHP">
+			<input type="hidden" name="ID" value="PHP">
+			<button class="btn5 w3-btn w3-blue" type="submit">Alterar</button>
+			<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('AlterarPrefer')">Cancelar</button>
+		</form>	
+	</div>
+
+
 </body>
 </html>

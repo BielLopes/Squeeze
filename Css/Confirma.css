@@ -1,0 +1,21 @@
+/*Cancelamento*/
+.Formular{
+    height: 25%;
+    background-color: #FFFDF1;
+    width: 55%;
+    margin-left: 22.5%;
+    box-shadow: 2px 2px 5px  5px #4444;
+    padding: 1%;
+    border-radius: 10px;
+  }
+  
+.Formular h1{
+    margin-left: 5%;
+    font-family: 'Topzera';
+    color: #0FF;
+  }
+.btn5{
+   border-radius: 5px; 
+   width: 12,5%;
+   margin-left: 23%;
+}

@@ -1,13 +1,20 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html>
 <head>
-	<title>Squeeze</title>
-	<charset=utf'8'>
+	<meta charset="UTF-8">
+  <link rel="stylesheet" href="../Fontes/stylesheet.css" type="text/css">
+  <link rel="stylesheet" href="../Css/w3.css" type="text/css" >
+  <link rel="stylesheet" href="../Css/Confirma.css" type="text/css">
+	<title>Squeeze</title>	
 </head>
 <body>
-	<div>
-		<h3>Você tem certeza que deseja excluir isso?</h3>
-		<button action="">Deletar</button><button><a href="">Cancelar</a></button>
-	</div>
+		<div class="Formular" style="margin-top:5%;">
+			<h1>Você tem certeza que deseja excluir isso?</h1>
+			<form action="Deleta.php">
+				<input type="hidden" value="ID_PHP">
+				<button class="btn5 w3-btn w3-blue" type="submit">Deletar</button>
+				<button class="btn5 w3-btn w3-blue" type="reset">Cancelar</button>
+			</form>
+		</div>
 </body>
 </html>
