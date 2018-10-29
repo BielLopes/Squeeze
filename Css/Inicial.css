@@ -1,18 +1,45 @@
+/*backToTop*/
+#BackToTop{
+    position: fixed;
+    margin-left: 93%;
+    margin-top: 45%;
+    width: 4.5%;
+    opacity: 0.5;
+}
+#BackToTop img{
+    width: 100%;
+}
+/*Menu*/
 .Fixar{
     position: fixed;
     width: 100%;
 }
-
+/*Navegação Interna*/
+.menu{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 24.3%;
+    width: 51.45%;
+}
+/*Container Padrão*/
 .container{
     width: 80%;
     margin-left: 10%;
     margin-top: 4%;
     align-items: center;
 }
+/*Poder: Invisibilidade*/
+.Invisible{
+    height: 0%;
+    width: 0%;
+    opacity: 0;
+}
 .container h2{
     font-family: 'Topzera';
     font-size: 50;
 }
+
+/*Sections da Página Inicial*/
 .Gener h2{
     margin-left: 40%;
 }
@@ -30,7 +57,7 @@
 .Fundo{
     background-color: #F9F9F9;
 }
-
+/*Seção Amigos*/
 .AmigosDisplay h2{
     margin-left: 42%;
 }
@@ -53,10 +80,16 @@
 .btn_search{
     height:40px;
     width:10%;
-    background-color:blue;
+    background-color:#00FFFF;
     border-radius: 5px;
     border:solid 0.5px transparent;
     color:white;
+}
+.y3{
+    border:solid black 1px;float:right;
+    width:25px;text-align:center;
+    color:white;background:red;cursor:pointer;
+    height:25px;
 }
 #formMigos{
     align-items: center;
@@ -69,6 +102,7 @@
     width: 89.3%;
 }
 
+/*Secção Alterar e Cancelar*/
 .Information h2{
     margin-left: 39.2%;
 }
@@ -91,4 +125,7 @@
     position: absolute;
     margin-left: 20%;
     margin-top: 5.5%;
+}
+#resultado{
+    display: block;
 }

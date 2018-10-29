@@ -10,14 +10,18 @@
 	<title>Inicial</title>
 </head>
 <body class="Fundo">
+	<div id="BackToTop">
+		<a href="#Preferencias1"><img src="Images/backtotop.png"></a>
+	</div>
 	<header class="Fixar">
 		<nav>
-			<ul class="menu w3-navbar w3-red">
+			<ul class="w3-navbar w3-red">
+					<a name="Preferencias"></a>
 				<li><a href="PaginaInicial.html" class="w3-grey"><img src="imagens/logo.png" style="width:40px;margin-bottom:-2px;"></a></li>
 				<li><a href="PaginaInicial.html">Página Inicial</a></li>
 				<li><a href="Favoritos.html">Favoritos</a></li>
 				<li><a href="Recomendacoes.html">Recomendações</a></li>
-				<li><a href="Artitas.html">Artistas</a></li>
+				<li><a href="Artistas.html">Artistas</a></li>
 				<li><a href="Genero.html">Gêneros Musicais</a></li>
 				<li class="w3-right"><a href="#">Sair</a></li>	
 				<li class="w3-right"><a href="#">Nome Do Usuário </a></li>						
@@ -26,7 +30,19 @@
 		</nav>
 	</header>
 	<br/>
-	<section class="container Gener">
+	<a name="Preferencias1"></a>
+	<h6  class="Invisible">Gernciar Preferências</h6>
+	<section id="InterNavegation">
+		<nav class="menu">
+			<ul class=" w3-navbar w3-card-2 w3-white">
+			  <li ><a href="#UltFavoritados">Favoritados Recentemente</a></li>
+			  <li><a href="#Migos">Amigos</a></li>
+			  <li><a href="#InfCadastradas">Informações Do Usuário</a></li>
+			  <li><a href="#AlteraSenha">Alterar Senha</a></li>
+			</ul>
+		 </nav>
+	</section>
+	<section id="Preferencias" class="container Gener">
 		<h2 >Gernciar Preferências</h2>
 		<form action="UpdatePrefer.php" method="post">
 			<table class="w3-table-all w3-centered">
@@ -44,9 +60,12 @@
 					</td>	
 				</tr>
 			</table>
+			<a name="UltFavoritados"></a>
 			<button class="btn w3-btn w3-blue" type="submit">Salvar</button>
 		</form>
+		
 	</section>
+	
 	<section class="container UltimosFavorit">
 		<div>
 			<h2>Ultimos Aritas Favoritados</h2>
@@ -57,7 +76,9 @@
 						<h1>Pitty</h1>
 						<form method="GET">
 							<input type="hidden" name="id" value="PHP">
-							<button class="btn2 w3-btn w3-red" type="submit">Favoritar</button>
+							<button class="btn2 w3-red" type="submit">
+								<img src="Images/deslike.png">
+							</button>
 						</form>
 						<nav>
 							<ul >
@@ -79,7 +100,9 @@
 						<h1>Mc Biel</h1>
 						<form method="GET">
 							<input type="hidden" name="id" value="PHP">
-							<button class="btn2 w3-btn w3-red" type="submit">Favoritar</button>
+							<button class="btn2 w3-red" type="submit">
+								<img src="Images/deslike.png">
+							</button>
 						</form>
 						<nav>
 							<ul >
@@ -99,8 +122,11 @@
 					<!--Mais artista colocados dinâmicamente-->
 				</li>
 			</ul>
+			
 		</div>
 	</section>
+	<a name="Migos"></a>
+	<button class="Invisible" ></button>
 	<section id="Amigos" class="container">
 		<div class="AmigosDisplay">
 			<h2>Amigos Atuais</h2><br/>
@@ -123,12 +149,13 @@
 		<div id="formMigos">
 			<form method="post" action="#pesquisar">
 				<input id="pesquisa2" type="text" name="pesq" class="pesquisaMigos w3-border" placeholder="Pesquisar">
-				<a href="#pesquisar"><input type="submit" value="Pesquisar" class="btn_search"></a>
+				<a href="#pesquisar" onclick="aparecer('resultado')"><input type="submit" value="Pesquisar" class="btn_search"></a>
 				<a name="pesquisar"></a>
 			</form>
 		</div>
-		<div id="resultado" class="AmigosDisplay" style="display:block;">
+		<div id="resultado" class="AmigosDisplay" >
 			<h2>Pesquisa</h2><br/>
+			<a href="#Migos"><span onclick="sumir('resultado')" class="y3">x</span></a>
 			<ul class="w3-ul w3-border w3-hoverable">
 				<!--Colocar os amigo dinâmicamente-->
 				<li>
@@ -146,6 +173,8 @@
 			</ul>
 		</div>
 	</section>
+	<a name="InfCadastradas"></a>
+	<button class="Invisible" ></button>
 	<section class="container Information">
 		<h2>Informações Cadastradas</h2>
 		<br/>
@@ -155,6 +184,7 @@
 		</ul>
 	</section>
 	<section class="container AlterPasword">
+		<a name="AlteraSenha"></a>
 		<table class="w3-centered">
 			<tr>
 				<td>
@@ -180,6 +210,16 @@
 			</tr>
 		</table>	
 	</section>
+	<script language="Javascript">
+		function sumir(i) {
+			document.getElementById(i).style.display = "none";
+		}
+		
+		function aparecer(i) {
+			document.getElementById(i).style.display = "initial";
+		
+		}
+	</script>
 		
 </body>
 </html>
