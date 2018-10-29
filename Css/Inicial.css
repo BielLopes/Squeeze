@@ -1,43 +1,9 @@
-/*backToTop*/
-#BackToTop{
-    position: fixed;
-    margin-left: 93%;
-    margin-top: 45%;
-    width: 4.5%;
-    opacity: 0.5;
-}
-#BackToTop img{
-    width: 100%;
-}
-
-/*Menu*/
-.Fixar{
-    position: fixed;
-    width: 100%;
-}
 /*Navegação Interna*/
 .menu{
     margin-top: 2%;
     margin-bottom: 2%;
     margin-left: 24.3%;
     width: 51.45%;
-}
-/*Container Padrão*/
-.container{
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 4%;
-    align-items: center;
-}
-/*Poder: Invisibilidade*/
-.Invisible{
-    height: 0%;
-    width: 0%;
-    opacity: 0;
-}
-.container h2{
-    font-family: 'Topzera';
-    font-size: 50;
 }
 
 /*Sections da Página Inicial*/
@@ -54,9 +20,6 @@
 
 .UltimosFavorit h2{
     margin-left: 38%;
-}
-.Fundo{
-    background-color: #F9F9F9;
 }
 /*Seção Amigos*/
 .AmigosDisplay h2{
@@ -109,6 +72,9 @@
 }
 .AlterPasword h2{
 
+}
+.inputar{
+    border-radius: 10px;
 }
 .AlterPasword{
     margin-bottom: 3%;

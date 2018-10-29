@@ -1,0 +1,37 @@
+/*backToTop*/
+#BackToTop{
+    position: fixed;
+    margin-left: 93%;
+    margin-top: 45%;
+    width: 4.5%;
+    opacity: 0.5;
+}
+#BackToTop img{
+    width: 100%;
+}
+
+/*Menu*/
+.Fixar{
+    position: fixed;
+    width: 100%;
+}
+/*Container Padrão*/
+.container{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 4%;
+    align-items: center;
+}
+.container h2{
+    font-family: 'Topzera';
+    font-size: 50;
+}
+/*Poder: Invisibilidade*/
+.Invisible{
+    height: 0%;
+    width: 0%;
+    opacity: 0;
+}
+.Fundo{
+    background-color: #F9F9F9;
+}
