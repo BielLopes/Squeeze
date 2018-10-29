@@ -2,3 +2,93 @@
     position: fixed;
     width: 100%;
 }
+
+.container{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 4%;
+    align-items: center;
+}
+.container h2{
+    font-family: 'Topzera';
+    font-size: 50;
+}
+.Gener h2{
+    margin-left: 40%;
+}
+.btn{
+
+    width: auto;
+    margin-top: 2.5%;
+    margin-left: 65%;
+    border-radius: 10px;
+  }
+
+.UltimosFavorit h2{
+    margin-left: 38%;
+}
+.Fundo{
+    background-color: #F9F9F9;
+}
+
+.AmigosDisplay h2{
+    margin-left: 42%;
+}
+.AmigosDisplay ul li h5{
+    display: inline;
+}
+.AmigosDisplay ul li form{
+    display: inline;
+    margin-left: 70%;
+}
+.AmigosDisplay ul li form img{
+    display: inline;
+    width: 100%;
+}
+.AmigosDisplay ul li form button{
+    display: inline;
+    border-radius: 10px;
+    width: 5%;
+}
+.btn_search{
+    height:40px;
+    width:10%;
+    background-color:blue;
+    border-radius: 5px;
+    border:solid 0.5px transparent;
+    color:white;
+}
+#formMigos{
+    align-items: center;
+    margin-top: 3%;
+}
+
+.pesquisaMigos{
+    border-radius: 5px;
+    height: 40px;
+    width: 89.3%;
+}
+
+.Information h2{
+    margin-left: 39.2%;
+}
+.AlterPasword h2{
+
+}
+.AlterPasword{
+    margin-bottom: 3%;
+}
+.AlterPasword table td{
+    width: 50%;
+}
+
+.btn3{
+    border-radius: 10000px;
+    width: 150px;
+    height: 150px;
+}
+.NoFim{
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 5.5%;
+}

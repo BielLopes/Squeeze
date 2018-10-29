@@ -7,9 +7,9 @@
     border-radius: 10px;
     background-color: #00FFFF;
 }
-.component h2{
+.component h1{
     font-family: 'Topzera';
-    font-size: 60;
+    font-size: 80;
     margin-left: 5%;
     display: inline;
 }
@@ -20,9 +20,8 @@
 .component form{
     display: inline;
 }
-.btn{
+.btn2{
     margin-top: 4%;
-    height: 10%;
     float: right;
     border-radius: 10px;
 }

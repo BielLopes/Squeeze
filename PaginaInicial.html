@@ -2,15 +2,16 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="Css/components.css" type="text/css">
 	<link rel="stylesheet" href="Css/Inicial.css" type="text/css">
 	<link rel="stylesheet" href="Css/reset.css" type="text/css">
 	<link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
 	<link rel="stylesheet" href="Css/w3.css" type="text/css">
 	<title>Inicial</title>
 </head>
-<body>
+<body class="Fundo">
 	<header class="Fixar">
-		<nav class="">
+		<nav>
 			<ul class="menu w3-navbar w3-red">
 				<li><a href="PaginaInicial.html" class="w3-grey"><img src="imagens/logo.png" style="width:40px;margin-bottom:-2px;"></a></li>
 				<li><a href="PaginaInicial.html">Página Inicial</a></li>
@@ -25,93 +26,160 @@
 		</nav>
 	</header>
 	<br/>
-	<section>
-		<ul>
-			<li><h2>Nome de Usuário</h2></li>
-			<li><h2>Login</h2></li>
-			<li><h2>E-mail Cadastrado</h2></li>
-		</ul>
-	</section>
-	<section>
+	<section class="container Gener">
+		<h2 >Gernciar Preferências</h2>
 		<form action="UpdatePrefer.php" method="post">
-		<input type="checkbox" name="PHP" value="ID_PHP">Gospel<br>
-		<input type="checkbox" name="PHP" value="ID_PHP"> Clásica<br>
-		<input type="checkbox" name="PHP" value="ID_3PHP" checked>Metal<br>
-		<button type="submit">Salvar</button>
-	</form>
+			<table class="w3-table-all w3-centered">
+				<tr>
+					<td>
+						<input type="checkbox" name="PHP" value="ID_PHP">Gospel
+					</td>
+					<td>
+						<input type="checkbox" name="PHP" value="ID_PHP"> Clásica
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" name="PHP" value="ID_3PHP" checked>Metal
+					</td>	
+				</tr>
+			</table>
+			<button class="btn w3-btn w3-blue" type="submit">Salvar</button>
+		</form>
 	</section>
-	<section>
+	<section class="container UltimosFavorit">
 		<div>
 			<h2>Ultimos Aritas Favoritados</h2>
 			<ul>
 				<li>
-					<div id="Artista">
-						<h2>Pitty</h2>
+					<div class="component">
 						<img src="Images/Artista.jpg">
-						<form>
+						<h1>Pitty</h1>
+						<form method="GET">
 							<input type="hidden" name="id" value="PHP">
-							<button type="submit">Favoritar</button>
+							<button class="btn2 w3-btn w3-red" type="submit">Favoritar</button>
 						</form>
-						<p>Amigos que favoritaram</p>
-						<!--Criar com CSS uma forma de dysplay: block; na ul e colocar regras de construção que se adaptem-->
-						<ul>
-							<li>Jão das couves</li>
-							<li>Jãozinho</li>
-							<li>Jé Pequeno</li>
-						</ul>
+						<nav>
+							<ul >
+							  <li>Gênero: PHP</li>	
+							  <li >Amigos que Favoritaram
+								<ul class="w3-ul w3-border">
+									<li>Jão das couves</li>
+									<li>Jãozinho</li>
+									<li>Jé Pequeno</li>
+								</ul>
+							  </li>
+						  </ul>
+						</nav>
 					</div>
 				</li>
-
+				<li>
+					<div class="component">
+						<img src="Images/Artista.jpg">
+						<h1>Mc Biel</h1>
+						<form method="GET">
+							<input type="hidden" name="id" value="PHP">
+							<button class="btn2 w3-btn w3-red" type="submit">Favoritar</button>
+						</form>
+						<nav>
+							<ul >
+							  <li>Gênero: PHP</li>	
+							  <li >Amigos que Favoritaram
+								<ul class="w3-ul w3-border">
+									<li>Jão das couves</li>
+									<li>Jãozinho</li>
+									<li>Jé Pequeno</li>
+								</ul>
+							  </li>
+						  </ul>
+						</nav>
+					</div>
+				</li>
 				<li>
 					<!--Mais artista colocados dinâmicamente-->
 				</li>
 			</ul>
 		</div>
 	</section>
-		<section id="Amigos">
-		<div id="AmigosAtual">
+	<section id="Amigos" class="container">
+		<div class="AmigosDisplay">
 			<h2>Amigos Atuais</h2><br/>
-			<ul>
+			<ul class="w3-ul w3-border w3-hoverable">
 				<!--Colocar os amigo dinâmicamente-->
 				<li>
 					<h5>PHP - Joao da Couves</h5>
-					<a style="float:right;" onclick="deletar(PHP)"><img  src="Images/delete"> </a>
+					<form action="comdirmacao.php" method="GET">
+							<button class="w3-btn" type="submit"><img  src="Images/delete.png"></button>
+					</form>					
 				</li>
 				<li>
-					
+					<h5>PHP - Joao da Couves</h5>
+					<form action="comdirmacao.php" method="GET">
+							<button class="w3-btn" type="submit"><img  src="Images/delete.png"></button>
+					</form>	
 				</li>
 			</ul>
 		</div>
-		<div>
-			<form method="post">
-				<input id="pesqu" type="text" name="pesq" placeholder="Pesquisar">
-				<button type="submit" >Pesquisar</button>
+		<div id="formMigos">
+			<form method="post" action="#pesquisar">
+				<input id="pesquisa2" type="text" name="pesq" class="pesquisaMigos w3-border" placeholder="Pesquisar">
+				<a href="#pesquisar"><input type="submit" value="Pesquisar" class="btn_search"></a>
+				<a name="pesquisar"></a>
 			</form>
 		</div>
-		<div id="resultado" style="display:none;">
+		<div id="resultado" class="AmigosDisplay" style="display:block;">
 			<h2>Pesquisa</h2><br/>
-			<ul>
+			<ul class="w3-ul w3-border w3-hoverable">
 				<!--Colocar os amigo dinâmicamente-->
 				<li>
 					<h5>PHP - Joao da Couves</h5>
-					<a style="float:right;" onclick="deletar(PHP)"><img  src="Images/delete"> </a>
+					<form action="comdirmacao.php" method="GET">
+							<button class="w3-btn w3-gray" type="submit"><img  src="Images/add.png"></button>
+					</form>					
 				</li>
 				<li>
-					
+					<h5>PHP - Joao da Couves</h5>
+					<form action="comdirmacao.php" method="GET">
+							<button class="w3-btn w3-gray" type="submit"><img  src="Images/add.png"></button>
+					</form>	
 				</li>
 			</ul>
 		</div>
 	</section>
-	<section>
-			<h2>Alterar Senha:</h2>
-			<form action="Components/Confimacao2.html">
-				<input type="text" placeholder="Senha Atual"><br>
-				<input type="text" placeholder="Nova Senha"><br>
-				<input type="text" placeholder="Confirma&ccedil;&atilde;o"><br>
-				<button type="submit">Confirmar</button>
-			</form>
+	<section class="container Information">
+		<h2>Informações Cadastradas</h2>
+		<br/>
+		<ul class="w3-ul w3-border">
+			<li><h3>Nome de Usuário: _SECTION</h3></li>
+			<li><h3>E-mail: _SECTION</h3></li>
+		</ul>
 	</section>
-	<a href="Confirmacao.html"><button>Cancelar conta</button></a>
-	
+	<section class="container AlterPasword">
+		<table class="w3-centered">
+			<tr>
+				<td>
+					<h2>Alterar Senha:</h2>
+					<form action="Components/Confimacao2.html">
+						<label class="w3-text-blue"><b>Senah Atual</b></label>
+      					<input class="w3-input w3-border" type="text" placeholder="Senha Atual">
+
+						<label class="w3-text-blue"><b>Nova Senha</b></label>
+      					<input class="w3-input w3-border" type="text" placeholder="Nova Atual">
+
+      					<label class="w3-text-blue"><b>Confirmar Nova Senha</b></label>
+      					<input class="w3-input w3-border" type="text" placeholder="Confirmar Nova Atual">	
+						<button type="submit" class=" btn w3-btn w3-blue">Confirmar</button>
+					</form>
+				</td>
+				<td>
+					<form class="NoFim" action="Confirmacao.html" method="post">
+						<button type="submit" class="btn3 w3-btn w3-red">Cancelar <br/> conta</button>
+					</form>
+				</td>
+				
+			</tr>
+		</table>	
+	</section>
+		
 </body>
 </html>
