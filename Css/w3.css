@@ -276,9 +276,20 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-orange,.w3-hover-orange:hover{color:#000!important;background-color:#ff9800!important}
 .w3-deep-orange,.w3-hover-deep-orange:hover{color:#fff!important;background-color:#ff5722!important}
 .w3-pink,.w3-hover-pink:hover{color:#fff!important;background-color:#e91e63!important}
-.w3-purple,.w3-hover-purple:hover{color:#fff!important;background-color:#9c27b0!important}
+.w3-purple,.w3-hover-purple:hover{color:#fff!important;background-color:#DDA0DD!important}
 .w3-deep-purple,.w3-hover-deep-purple:hover{color:#fff!important;background-color:#673ab7!important}
 .w3-red,.w3-hover-red:hover{color:#fff!important;background-color:#900020!important}
+
+
+/*Cores de Fundo*/
+.w3-background1{background-color:#EEE8AA!important}
+.w3-background2{background-color:#FFF5EE!important}
+.w3-background3{background-color:#FFE4C4!important}
+.w3-background4{background-color:#D8BFD8!important}
+.w3-background5{background-color:#B0E0E6!important}
+.w3-background6{background-color:#FFE4E1!important}
+
+
 .w3-sand,.w3-hover-sand:hover{color:#000!important;background-color:#fdf5e6!important}
 .w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#009688!important}
 .w3-yellow,.w3-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}

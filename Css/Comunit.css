@@ -32,6 +32,34 @@
     width: 0%;
     opacity: 0;
 }
+
+/*Gundo do body*/
 .Fundo{
     background-color: #F9F9F9;
+}
+
+/*Titulo das páginas*/
+#Favorit{
+    margin-left: 38.8%;
+    font-family: 'Topzera';
+    font-size: 100px;
+    color: #900020;
+}
+#Recomend{
+    margin-left: 30%;
+    font-family: 'Topzera';
+    font-size: 100px;
+    color: #900020;
+}
+#Artist{
+    margin-left: 38.5%;
+    font-family: 'Topzera';
+    font-size: 100px;
+    color: #900020;
+}
+#Gener{
+    margin-left: 40%;
+    font-family: 'Topzera';
+    font-size: 100px;
+    color: #900020;
 }

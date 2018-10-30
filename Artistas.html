@@ -3,64 +3,174 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="Css/w3.css">
-	<title></title>
+	<link rel="stylesheet" href="Css/Comunit.css" type="text/css">
+  	<link rel="stylesheet" href="Css/components.css" type="text/css">
+  	<link rel="stylesheet" href="Css/reset.css" type="text/css">
+  	<link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
+  	<link rel="stylesheet" href="Css/w3.css" type="text/css">
+	<title>Artistas</title>
 </head>
-<body>
-			<h2>Recomendações</h2>
+<body class="Fundo">
+	<div id="BackToTop">
+		<a href="#Top"><img src="Images/backtotop.png"></a>
+	</div>
+		<header class="Fixar">
+			<nav>
+				<ul class="w3-navbar w3-red">
+					<a name="Preferencias"></a>
+					<li><a href="PaginaInicial.html" class="w3-grey"><img src="imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
+					<li><a href="PaginaInicial.html">Página Inicial</a></li>
+					<li><a href="Favoritos.html">Favoritos</a></li>
+					<li><a href="Recomendacoes.html">Recomendações</a></li>
+					<li><a href="Artistas.html">Artistas</a></li>
+					<li><a href="Genero.html">Gêneros Musicais</a></li>
+					<li class="w3-right"><a href="#">Sair</a></li>	
+					<li class="w3-right"><a href="#">Nome Do Usuário </a></li>						
+				</ul>  
+			</nav>
+		</header>
+		<br/>
+		<a name="Top"></a>
+		<h6 style="font-size: 8px"  class="Invisible">Topo da Minha Página</h6>
+		<br/>
+		<h1 id="Artist">Artistas</h1>
 			
 	<section id="AtalhoPesquisa" >
   <div class="w3-bar w3-border-bottom w3-light-grey intronav">
     <ul class="w3-navbar w3-card-3 w3-white ">
-      <li><a onclick="openC('Ranq')">Os Mais Badalados</a></li>
+      <li ><a onclick="openC('Ranq')">Os Mais Badalados</a></li>
       <li><a onclick="openC('Ordem')">Em Ordem</a></li>
     </ul>
   </div>
-  <div id="Ranq" class="w3-container city w3-animate-opacity">
+  <div id="Ranq" class="w3-background2 w3-container city w3-animate-opacity">
     	<!--Colocar com PHP uma quantidade Limitada de Artistas-->
       		<ul>
 				<li>
 					<!--Colocar com PHP os Artistas mais favoritados em Ordem-->
-					<div id="Artista">
-					
-					<h2>Pitty</h2>
-						<img src="Artista.jpg">
-						<form>
-							<input type="hidden" name="id" value="PHP">
-							<button type="submit">Favoritar</button>
+					<div class="component">
+                  		<img src="Images/Artista.jpg">
+                  		<h1>Pitty</h1>
+                  		<form method="GET">
+                    		<input type="hidden" name="id" value="PHP">
+                    		<button class="btn2 w3-red" type="submit">
+                      		<img src="Images/deslike.png">
+                    		</button>
+                  		</form>
+			            <nav>
+                    		<ul >
+                      			<li>Gênero: PHP</li>	
+                      			<li >
+								Amigos que Favoritaram
+                      			<ul class="w3-ul w3-border">
+                        			<li>Jão das couves</li>
+                        			<li>Jãozinho</li>
+                        			<li>Jé Pequeno</li>
+                      			</ul>
+                      			</li>
+                    		</ul>
+                  		</nav>
+                	</div>
+				</li>
+					<div class="component">
+						<img src="Images/Artista.jpg">
+						<h1>Da Leste</h1>
+						<form method="GET">
+						  <input type="hidden" name="id" value="PHP">
+						  <button class="btn2 w3-red" type="submit">
+							<img src="Images/deslike.png">
+						  </button>
 						</form>
-						<p>Amigos que favoritaram</p>
-						<!--Criar com CSS uma forma de dysplay: block; na ul e colocar regras de construção que se adaptem-->
-						<ul>
-							<li>Jão das couves</li>
-							<li>Jãozinho</li>
-							<li>Jé Pequeno</li>
-						</ul>
-					</div>
+					  <nav>
+						  <ul >
+								<li>Gênero: PHP</li>	
+								<li >
+							  Amigos que Favoritaram
+								<ul class="w3-ul w3-border">
+								  <li>Jão das couves</li>
+								  <li>Jãozinho</li>
+								  <li>Jé Pequeno</li>
+								</ul>
+								</li>
+						  </ul>
+						</nav>
+				  </div>
+				<li>
+
+				</li>
+
+				<li>
+						<!--Mais Atistas-->
+
 				</li>
 			</ul>
+			<br/>
+			<br/>
+			  <br/>
+			</div>
   </div>
 
-  <div id="Ordem" class="w3-container city w3-animate-opacity" style="display:none">
+  <div id="Ordem" class=" w3-background5 w3-container city w3-animate-opacity" style="display:none">
     		<ul>
 				<li>
-					<!--Colocar com PHP os Artistas em Ordem Alfabética-->
-					<div id="Artista">
-					<h2>Pitty</h2>
-						<img src="Artista.jpg">
-						<form>
-							<input type="hidden" name="id" value="PHP">
-							<button type="submit">Favoritar</button>
-						</form>
-						<p>Amigos que favoritaram</p>
-						<!--Criar com CSS uma forma de dysplay: block; na ul e colocar regras de construção que se adaptem-->
-						<ul>
-							<li>Jão das couves</li>
-							<li>Jãozinho</li>
-							<li>Jé Pequeno</li>
-						</ul>
-					</div>
+							<div class="component">
+								<img src="Images/Artista.jpg">
+								<h1>Annita</h1>
+								<form method="GET">
+								  <input type="hidden" name="id" value="PHP">
+								  <button class="btn2 w3-red" type="submit">
+									<img src="Images/like.png">
+								  </button>
+								</form>
+							  <nav>
+								  <ul >
+										<li>Gênero: PHP</li>	
+										<li >
+									  Amigos que Favoritaram
+										<ul class="w3-ul w3-border">
+										  <li>Jão das couves</li>
+										  <li>Jãozinho</li>
+										  <li>Jé Pequeno</li>
+										</ul>
+										</li>
+								  </ul>
+								</nav>
+						  	</div>
 				</li>
+				<li>
+							<div class="component">
+								<img src="Images/Artista.jpg">
+								<h1>Catra</h1>
+								<form method="GET">
+								  <input type="hidden" name="id" value="PHP">
+								  <button class="btn2 w3-red" type="submit">
+									<img src="Images/like.png">
+								  </button>
+								</form>
+							  <nav>
+								  <ul >
+										<li>Gênero: PHP</li>	
+										<li >
+									  Amigos que Favoritaram
+										<ul class="w3-ul w3-border">
+										  <li>Jão das couves</li>
+										  <li>Jãozinho</li>
+										  <li>Jé Pequeno</li>
+										</ul>
+										</li>
+								  </ul>
+								</nav>
+						  	</div>
+				</li>
+
+				<li>
+					<!--Mais Artistas com PHP em ordem Alfabetica-->
+				</li>
+
 			</ul>
+			<br/>
+			<br/>
+			  <br/>
+			</div>
   </div>
   <script>
   function openC(cityName) {
