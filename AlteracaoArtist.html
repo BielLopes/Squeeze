@@ -1,23 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
+		<link rel="stylesheet" href="Css/w3.css" type="text/css">
+		<link rel="stylesheet" href="Css/AlteraArtist.css" type="text/css">
+		<link rel="stylesheet" href="Css/Confirma.css" type="text/css">
 	<title>Editar Artista</title>
 </head>
 <body>
+	<!--Deleta Artista Form-->
+			<div id="exclude" class="w3-modal">
+				<div class="Formular">
+					<span onclick="sumir('exclude')" class="w3-closebtn">&times;</span>
+					<h1>Você tem certeza que deseja excluir Esse Artista?</h1>
+					<form action="DeleteArtist.php">
+						<input type="hidden" name="ID_Artista" value="ID_PHP">
+						<button class="btn5 w3-btn w3-blue" action="">Deletar</button>
+						<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('exclude')">Cancelar</button>
+					</form>
+				</div>
+			</div>
+
+
+			
+<div class="Formulario">
 	<h2>Dados do Artista</h2>
-	<form action="">
-		<input type="text"  name ="nome"placeholder="Nome"><br>
-		<br/>
-		<h3>Gênero:</h3>
-		<input list="Gener" name="Generos">
-		  <datalist id="Gener">
-		  	<!--Alocar todos os gêneros cadastrados-->
-      		<option  value="PHP" checked>Metal</option>
-      		<option  value="PHP">POP</option>
+	<form action="AlteraArtist.php">
+		<p>Id do Artista : PHP</p>
+		<input type="hidden" name="ID_Artista" value="PHP">
+		<input class="pesquisa" type="text"  name ="nome"placeholder="Nome"><br>
+		<h3>Gênero Do Artista:</h3>
+		  <select class="pesquisa" name="Generos">
+			  <!--Alocar todos os gêneros cadastrados-->
+			<option  value="PHP" disabled>Selecione Um Gênero</option>
+      		<option  value="PHP">Metal</option>
+      		<option  value="PHP" selected>POP</option>
       		<option  value="PHP">Axe</option>
-  		</datalist>
+		  </select>
   		<br/>
-		<button type="submit">Alterar</button><br>
+		<button class="btn1 w3-btn w3-blue" type="submit">Alterar</button><br>
 	</form>
+
+	<button class="btn2 w3-btn w3-red" onclick="aparecer('exclude')">Deletar Artista</button>
+</div>
+		<script language="Javascript">
+			function sumir(i) {
+			  document.getElementById(i).style.display = "none";
+			}
+			
+			function aparecer(i) {
+			  document.getElementById(i).style.display = "initial";
+			
+			}
+		</script>
+</div>	
 </body>
 </html>

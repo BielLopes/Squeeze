@@ -8,7 +8,7 @@
 
 /*Sections da Página Inicial*/
 .Gener h2{
-    margin-left: 34%;
+    text-align: center;
 }
 .btn{
 
@@ -19,11 +19,11 @@
   }
 
 .UltimosFavorit h2{
-    margin-left: 30%;
+    text-align: center;
 }
 /*Seção Amigos*/
 .AmigosDisplay h2{
-    margin-left: 35%;
+    text-align: center;
 }
 .AmigosDisplay ul li h5{
     display: inline;
@@ -68,7 +68,7 @@
 
 /*Secção Alterar e Cancelar*/
 .Information h2{
-    margin-left: 29%;
+    text-align: center;
 }
 
 /*Formulário de Senha*/

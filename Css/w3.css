@@ -279,7 +279,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-purple,.w3-hover-purple:hover{color:#fff!important;background-color:#DDA0DD!important}
 .w3-deep-purple,.w3-hover-deep-purple:hover{color:#fff!important;background-color:#673ab7!important}
 .w3-red,.w3-hover-red:hover{color:#fff!important;background-color:#900020!important}
-
+.w3-textura{background-image: url(../Images/Home2.jpg)!important; background-repeat: repeat!important;}
 
 /*Cores de Fundo*/
 .w3-background1{background-color:#EEE8AA!important}

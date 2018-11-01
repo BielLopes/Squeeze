@@ -1,0 +1,43 @@
+body{
+	background-image: url(../Images/Home2.jpg)!important;
+	background-repeat: repeat!important;
+}
+
+.Fixar{
+    position: fixed;
+    width: 100%;
+}
+a{
+	text-decoration: none;
+	padding: 60px!important;
+	margin: 60px;
+}
+h1{
+	text-align: center;
+	font-family: 'Topzera'!important;
+	color:#900020!important;
+	font-size:150px!important;
+}
+.HmeNav{
+
+	border-right:2px solid white!important;
+	border-bottom: 2px solid white!important;
+
+}
+#btn {
+	text-align: center!important;
+	background-color: white!important;
+	color:#900020!important;
+	border:none!important;
+	border-radius: 5px!important;
+	border-right:2px solid #900020!important;
+	border-bottom: 2px solid #900020!important;
+	margin-top: 30%!important;
+	margin-left: 38%!important;
+	width: 25%!important;
+	height: 100%!important;
+}
+.pe{
+	text-align: center;
+
+}

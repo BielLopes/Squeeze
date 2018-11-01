@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+		<meta charset="utf-8">
+	  <link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
+	  <link rel="stylesheet" href="Css/Confirma.css" type="text/css">
+	  <link rel="stylesheet" href="Css/w3.css" type="text/css">
+	  <link rel="stylesheet" href="Css/Cadastro.css" type="text/css">
+	  <link rel="stylesheet" href="Css/altgen.css" type="text/css">
+
 	<title>Editar Artista</title>
 </head>
 <body>
-	<h2>Dados do Gênero</h2>
-	<form action="">
-		<input type="text"  name ="nome"placeholder="Nome">
-		<br/>
-		<button type="submit">Alterar</button><br>
-	</form>
+
+<!--Deleta Artista Form-->
+		<div id="exclude" class="w3-modal">
+			<div class="Formular">
+				<span onclick="sumir('exclude')" class="w3-closebtn">&times;</span>
+				<h1>Você tem certeza que deseja excluir Esse Gênero?</h1>
+				<form action="DeleteArtist.php">
+					<input type="hidden" name="ID_Genero" value="ID_PHP">
+					<button class="btn5 w3-btn w3-blue" action="">Deletar</button>
+					<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('exclude')">Cancelar</button>
+				</form>
+			</div>
+		</div>
+
+	<div class="Formulario">
+		<h2>Dados do Gênero</h2>
+		<p>Id do Gênero : PHP</p>
+		<form action="AlteraGen.php" >
+			<input type="hidden" name="ID_Genero" value="PHP">
+			<input type="text" class="pesquisa w3-input w3-border" name ="nome"placeholder="Nome">
+			<br/>
+			<button class="btn1 w3-btn w3-blue" type="submit">Alterar</button><br>
+		</form>
+	<button class="btn2 w3-btn w3-red" onclick="aparecer('exclude')">Deletar Artista</button>
+	</div>
+	<script language="Javascript">
+		function sumir(i) {
+		  document.getElementById(i).style.display = "none";
+		}
+		
+		function aparecer(i) {
+		  document.getElementById(i).style.display = "initial";
+		
+		}
+	</script>
 </body>
 </html>

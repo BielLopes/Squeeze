@@ -38,27 +38,21 @@
     background-color: #F9F9F9;
 }
 
+/*Imagem de Fundo HomePage*/
+.ImageFundo{
+    background-image: url(../Images/Home2.jpg);
+    background-repeat: repeat;
+}
+#Logo{
+    font-family: 'Topzera';
+    font-size: 150px;
+    margin-top: 30%;
+    margin-left: 35%;
+    color: #900020;
+}
 /*Titulo das páginas*/
-#Favorit{
-    margin-left: 38.8%;
-    font-family: 'Topzera';
-    font-size: 100px;
-    color: #900020;
-}
-#Recomend{
-    margin-left: 30%;
-    font-family: 'Topzera';
-    font-size: 100px;
-    color: #900020;
-}
-#Artist{
-    margin-left: 38.5%;
-    font-family: 'Topzera';
-    font-size: 100px;
-    color: #900020;
-}
-#Gener{
-    margin-left: 40%;
+#Title{
+    text-align: center;
     font-family: 'Topzera';
     font-size: 100px;
     color: #900020;
