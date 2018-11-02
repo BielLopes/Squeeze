@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>
+
+<html wtx-context="51DE4C06-ED48-4358-8D1E-B337B653AC13"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="CSS/Admin.css" type="text/css">
+<link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
+<link rel="stylesheet" href="CSS/w3.css" type="text/css">
+
 	<title>Squeeze Admin</title>
-	<meta charset="UTF-8">
+	
 </head>
 <body>
-	<h1>Pagina do Admin</h1>
+	<h1 style="font-family: &#39;Topzera&#39;; font-size: 100px;">Página do Administrador</h1>
 	<p>Adicione um artista</p>
-	<form action="">
-		<input type="text"  name ="nome"placeholder="Nome"><br>
-		<br/>
+	<form class="Adicionar" action="Aciona.php" >
+		<input class="input w3-input" type="text" name="nome" placeholder="Nome"><br>
+		<br>
 		<h3>Gênero:</h3>
-		<br/>
-		<input list="Gener" name="Generos">
+		<br>
+		<input class="input w3-input" list="Gener" name="Generos" >
 		  <datalist id="Gener">
 		  	<!--Alocar todos os gêneros cadastrados-->
-      		<option  value="PHP" checked>Metal</option>
-      		<option  value="PHP">POP</option>
-      		<option  value="PHP">Axe</option>
+      		<option value="PHP" checked="">Metal</option>
+      		<option value="PHP">POP</option>
+      		<option value="PHP">Axe</option>
   		</datalist>
-		<button action="">Adicionar</button><br>
+  		<br>
+		<button class="btn-add w3-btn w3-red" action="">Adicionar</button><br>
 	</form>
 
 	<p>Todos os artistas</p>
-	<table>
-		<tr>
+	<table class="tabela w3-table-all w3-centered">
+		<tbody><tr>
 			<th>Nome</th>
 			<th>Gênero</th>
 			<th></th>
@@ -35,25 +40,26 @@
 			<td>POP</td>
 			<td>
 				<form action="AlteracaoArtist.html" method="get">
-					<button type="submit">Alterar</button></td>
-				</form>
+					<input type="hidden" name="ID_Artist" value="PHP">
+					<button class="w3-btn w3-red" type="submit">Alterar</button></form></td>
+				
 			<td>
-				<form action="Components/Confirmacao.html" method="get">
-					<button type="submit">Excluir</button>
+				<form action="Components/Confirmacao.html" method="get" >
+					<button class="w3-btn w3-red" type="submit">Excluir</button>
 				</form>
-				</td>
+			</td>
 		</tr>
-	</table><br>
+	</tbody></table><br>
 	
 	<p>Adicione um Gênero</p>
-	<form action="">
-		<input type="text" name="" placeholder="Gênero"><br>
-		<button action="">Adicionar</button><br>
+	<form class="Adicionar" action="Admin.html" >
+		<input class="input w3-input" type="text" name="Genero" placeholder="Gênero"><br>
+		<button class="btn-add w3-btn w3-red" action="">Adicionar</button><br>
 	</form>
 
 	<p>Todos os Gêneros</p>
-	<table>
-		<tr>
+	<table class="tabela2 w3-table-all w3-centered">
+		<tbody><tr>
 			<th>Gênero</th>
 			<th></th>
 			<th></th>
@@ -61,15 +67,19 @@
 		<tr>
 			<td>POP</td>
 			<td>
-				<form action="AlteraGene.html" method="get">
-					<button type="submit">Alterar</button>
+				<form action="AlteraGene.html" method="get" >
+					<button class="w3-btn w3-red" type="submit">Alterar</button>
 				</form>
-			</td>	
-			<td><button><a href="Components/Confirmacao.html">Excluir</a></button></td>
+			</td>
+			<td>
+			<form action="Components/Confirmacao.html" method="get" >
+					<button class="w3-btn w3-red" type="submit">Excluir</button>
+				</form> 	
+			</td>
 		</tr>
-	</table><br>
+	</tbody></table><br><br><br>
 
-	<button><a href=="">Sair</a></button>
+	<button style="text-decoration: none;" class="w3-red w3-btn"><a href="">Sair</a></button>
 
-</body>
-</html>
+
+</body></html>

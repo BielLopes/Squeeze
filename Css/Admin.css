@@ -1,0 +1,71 @@
+*{
+	margin: 20;
+	padding: 0;
+	text-align: center;
+
+}
+.input{
+	height: 50px;
+	border-radius: 10px;
+	font-size: 30px;
+}
+body{
+	background-color:#e2e2e2;
+}
+h1{
+	font-size: 80px;
+	color: #900020;
+	font-family: 'Topzera';
+}
+h3{
+	font-family: 'Topzera';
+	font-size: 32px;
+}
+p{
+	font-family: 'Topzera';
+	font-size: 45px;
+}
+table{
+	text-align:center;
+	font-family: Helvetica, Arial, sans-serif; 
+}
+
+button{
+	background-color: #5d45dc; 
+	border: none;
+	color: #fff;
+}
+table{
+   width: 35%;
+}
+
+.btn-add{
+	border-radius: 10px;
+	font-size: 25px;
+}
+
+button{
+	border-radius: 10px;
+	text-decoration: none;
+}
+.tabela{
+	width: 80%;
+	margin-left:10%;
+}
+
+.tabela2{
+	width: 60%;
+	margin-left: 20%;
+}
+
+
+.Adicionar{
+  height: 55%;
+  background-color: #0FF;
+  background-size: 400px 200px;
+  width: 50%;
+  margin-left: 25%;
+  box-shadow: 2px 2px 5px  5px #4444;
+  padding: 1%;
+  border-radius: 10px;
+}
