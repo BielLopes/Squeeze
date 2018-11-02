@@ -1,3 +1,26 @@
+<?php
+	require_once "Controller/verifica.php";
+	require_once 'Model/User.php';
+	require_once 'DAO/PreferenciaDAO.php';
+	require_once 'Model/Genero.php';
+	require_once 'DAO/GeneroDAO.php';
+
+	$consulta_Banco = new GeneroDAO();
+	$todosOsGeneros = $consulta_Banco->retornaAll();
+	$fecha = false;
+
+	$id_User = $_SESSION['ID'];
+	$prefDAO = new PreferenciaDAO();
+	$minhasPreferencias = $prefDAO->preferenciasDoUsuario($id_User);
+
+	$atual = " ";
+	/*$user = new User("Aleluia","","","");
+	echo $user->getNmUser();
+	$name = $_SESSION['Usuario'];
+	echo $name->getNmUser();
+	*/
+?>
+
 <!DOCTYPE html5>
 <html>
 <head>
@@ -18,7 +41,8 @@
 				<div class="Formular">
 					<span onclick="sumir('exclude')" class="w3-closebtn">&times;</span>
 					<h1>Você tem certeza que deseja excluir Sua Conta?</h1>
-					<form action="calncelaConta.php">
+					<form action="Controller/cancelaConta.php" method="post">
+						<input type="hidden" name="tipo" value="deleta">
 						<input type="hidden" name="ID_User" value="ID_PHP">
 						<button class="btn5 w3-btn w3-blue" action="">Deletar</button>
 						<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('exclude')">Cancelar</button>
@@ -46,6 +70,18 @@
 				</div>
 			</div>
 
+		<!--Deslogar-->
+			<div id="exit" class="w3-modal">
+				<div class="Formular">
+					<span onclick="sumir('exit')" class="w3-closebtn">&times;</span>
+					<h1>Você tem certeza que deseja Deslogar?</h1>
+					<form action="Controller/LogOut.php" method="post">
+						<input type="hidden" name="logout" value="true">
+						<button class="btn5 w3-btn w3-blue" action="">Sair</button>
+						<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('exit')">Cancelar</button>
+					</form>
+				</div>
+			</div>
 
 
 	<div id="BackToTop">
@@ -54,14 +90,14 @@
 	<header class="Fixar">
 		<nav>
 			<ul class="w3-navbar w3-red">
-				<li><a href="PaginaInicial.html" class="w3-grey"><img src="imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
+				<li><a href="PaginaInicial.php" class="w3-grey"><img src="imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
 				<li><a href="PaginaInicial.html">Página Inicial</a></li>
 				<li><a href="Favoritos.html">Favoritos</a></li>
 				<li><a href="Recomendacoes.html">Recomendações</a></li>
 				<li><a href="Artistas.html">Artistas</a></li>
 				<li><a href="Genero.html">Gêneros Musicais</a></li>
-				<li class="w3-right"><a href="#">Sair</a></li>	
-				<li class="w3-right"><a href="#">Nome Do Usuário </a></li>						
+				<li class="w3-right"><a onclick="aparecer('exit')">Sair</a></li>	
+				<li class="w3-right"><a href="#"><?php  echo $_SESSION['Name']; ?> </a></li>						
 			</ul>
 			
 		</nav>
@@ -81,21 +117,45 @@
 	</section>
 	<section id="Preferencias" class="container Gener">
 		<h2 >Gernciar Preferências</h2>
-		<form action="UpdatePrefer.php" method="post">
+		<form action="Controller/UpdatePrefer.php" method="post">
+		<input type="hidden" name="tipo" value="alteraPref">
 			<table class="w3-table-all w3-centered">
-				<tr>
-					<td>
-						<input type="checkbox" name="PHP" value="ID_PHP">Gospel
-					</td>
-					<td>
-						<input type="checkbox" name="PHP" value="ID_PHP"> Clásica
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="checkbox" name="PHP" value="ID_3PHP" checked>Metal
-					</td>	
-				</tr>
+			<?php	foreach ($todosOsGeneros as $genero) {
+
+					foreach($minhasPreferencias as $gener02){
+
+						if($genero->getId() == $gener02){
+							$atual ="checked";
+						}
+
+					}
+
+						if(!$fecha){
+							$fecha = true;
+							?>
+						<tr>
+						<td>
+							<input <?php echo $atual; ?> type="checkbox" name="<?php echo $genero->getId(); ?>" value="<?php echo $genero->getName(); ?>" ><?php echo $genero->getName(); ?>
+						</td>
+						<?php
+						}else{
+							$fecha = false;
+						?>					
+						<td>
+							<input <?php echo $atual; ?> type="checkbox" name="<?php echo $genero->getId(); ?>" value="<?php echo $genero->getName(); ?>" ><?php echo $genero->getName(); ?>
+						</td>
+						</tr>
+					<?php
+
+						}
+
+						$atual = " ";
+					}
+					if($fecha){
+						echo "</tr>";
+						$fecha = false;
+					}
+			?>
 			</table>
 			<a name="UltFavoritados"></a>
 			<button onclick="aparecer('AlterarPrefer')" class="btn w3-btn w3-blue" type="button">Salvar</button>

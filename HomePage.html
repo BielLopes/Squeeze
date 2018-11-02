@@ -16,22 +16,25 @@
 		<nav >
 			<div  class="Fixar HmeNav w3-bar w3-red">
 					<a onclick="aparecer('Login')" class="w3-bar-item w3-button">Login</a>
-					<a href="Cadastro.html" class="w3-bar-item w3-button">Cadastre-se</a>
+					<a href="CadastroView.php" class="w3-bar-item w3-button">Cadastre-se</a>
 					<img src="" alt="logo">		
 			</div>
-			<button id="btn" class="w3-btn"><a href="">VIRE ASSINANTE</a></button>
+			<button id="btn" class="w3-btn"><a href="CadastroView.php" >VIRE ASSINANTE</a></button>
 		</nav>
 	</header>
 	<br/>
 	<h1>Squeeze</h1>
+
+	<!--Component de Login-->
 <div id="Login" class="w3-modal">
 
 	<div class="Formulario">
     <span onclick="document.getElementById('Login').style.display='none'" class="w3-closebtn">&times;</span>
     <h2>Login</h2>
-    <form  name="e-mail" action="PaginaInicial.html" method="post">
-      <input type="email" class="pesquisa w3-input w3-border" name="e-mail" placeholder="Login"></br>
-      <input type="password" class="pesquisa w3-input w3-border" name="Senha" placeholder="Senha"></br>
+    <form action="Controller/Login.php" method="post">
+			<input type="hidden" name="tipo" value="Login">
+      <input required type="text" class="pesquisa w3-input w3-border" name="login" placeholder="Login"></br>
+      <input required type="password" class="pesquisa w3-input w3-border" name="Senha" placeholder="Senha"></br>
       <button type="submit" class="btn w3-btn w3-red w3-round" name="submeter">Entrar</button>
     </form>
 

@@ -2,6 +2,7 @@
   width: auto;
   float: right;
   margin-right: 5%;
+  margin-top: 2.5%;
 }
 .menu{
   margin-top: 2%;
@@ -10,7 +11,7 @@
   width: 13.3%;
 }
 .Formulario{
-  height: 55%;
+  height: 55%!important;
   background-color: #FFFDF1;
   width: 30%;
   margin-left: 35%;
@@ -20,10 +21,10 @@
 }
 
 .Formulario h2{
-margin-left: 37.5%;
-  font-size: 60;
+  text-align: center;
+  font-size: 60px;
   font-family: 'Topzera';
-  color: #0FF;
+  color: #900020;
 }
 .pesquisa{
     width: 100%;

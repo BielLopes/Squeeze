@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Out-2018 às 15:39
--- Versão do servidor: 10.1.36-MariaDB
--- versão do PHP: 7.2.11
+-- Generation Time: 02-Nov-2018 às 22:10
+-- Versão do servidor: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `amigos` (
-  `ID_amigo` int(11) NOT NULL,
   `ID_Usuario` int(11) NOT NULL,
   `ID_Usuario2` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_bin;
@@ -38,9 +37,10 @@ CREATE TABLE `amigos` (
 -- Extraindo dados da tabela `amigos`
 --
 
-INSERT INTO `amigos` (`ID_amigo`, `ID_Usuario`, `ID_Usuario2`) VALUES
-(1, 2, 3),
-(2, 1, 3);
+INSERT INTO `amigos` (`ID_Usuario`, `ID_Usuario2`) VALUES
+(1, 3),
+(2, 3),
+(2, 4);
 
 -- --------------------------------------------------------
 
@@ -109,7 +109,13 @@ CREATE TABLE `genero` (
 INSERT INTO `genero` (`Nome`, `ID_Genero`) VALUES
 ('Rock', 1),
 ('POP', 2),
-('Indie', 3);
+('Indie', 3),
+('Classica', 4),
+('Have Metal', 5),
+('Axé da Bhaia', 6),
+('Funk', 7),
+('Contry', 8),
+('Boa', 9);
 
 -- --------------------------------------------------------
 
@@ -118,7 +124,6 @@ INSERT INTO `genero` (`Nome`, `ID_Genero`) VALUES
 --
 
 CREATE TABLE `preferencia` (
-  `ID_preferencia` int(11) NOT NULL,
   `ID_Genero` int(11) NOT NULL,
   `ID_Usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -127,12 +132,17 @@ CREATE TABLE `preferencia` (
 -- Extraindo dados da tabela `preferencia`
 --
 
-INSERT INTO `preferencia` (`ID_preferencia`, `ID_Genero`, `ID_Usuario`) VALUES
-(1, 3, 2),
-(2, 2, 2),
-(3, 1, 3),
-(4, 2, 3),
-(5, 1, 4);
+INSERT INTO `preferencia` (`ID_Genero`, `ID_Usuario`) VALUES
+(1, 3),
+(1, 4),
+(1, 9),
+(2, 2),
+(2, 3),
+(2, 9),
+(3, 2),
+(4, 9),
+(5, 9),
+(6, 9);
 
 -- --------------------------------------------------------
 
@@ -156,7 +166,11 @@ INSERT INTO `usuario` (`ID_Usuario`, `Nome`, `Login`, `Senha`, `E-mail`) VALUES
 (1, 'ADM - Cartarina', 'adm.squeeze', '123456', ''),
 (2, 'Paulo Maciel', 'paulo.squeeze', '123456', ''),
 (3, 'Gabriela Paixão', 'gabriela.squeeze', '123456', ''),
-(4, 'Gabriel Galoma', 'gabriel.squeeze', '123456', '');
+(4, 'Gabriel Galoma', 'gabriel.squeeze', '123456', ''),
+(5, 'JÃ£o Das Couves', 'Couves', 'sqBtFJ9ZgjWB.', 'couve@couve.com'),
+(6, 'JÃ£o Das Couves', 'BielLopes', 'sqqsCTgBzid7Q', 'couve@couve.com'),
+(7, 'Gabriel Lopes Machado', 'BielL', 'sq7aaKKlHK6HU', 'biel-eng@ufmg.com.br'),
+(9, 'PreferTest', 'Preferencia', 'sqGWJIV2Y0yRg', 'Prefer@prefe.br');
 
 --
 -- Indexes for dumped tables
@@ -166,7 +180,7 @@ INSERT INTO `usuario` (`ID_Usuario`, `Nome`, `Login`, `Senha`, `E-mail`) VALUES
 -- Indexes for table `amigos`
 --
 ALTER TABLE `amigos`
-  ADD PRIMARY KEY (`ID_amigo`),
+  ADD PRIMARY KEY (`ID_Usuario`,`ID_Usuario2`),
   ADD KEY `ID_amigo_3` (`ID_Usuario`),
   ADD KEY `ID_Usuario2` (`ID_Usuario2`);
 
@@ -195,7 +209,7 @@ ALTER TABLE `genero`
 -- Indexes for table `preferencia`
 --
 ALTER TABLE `preferencia`
-  ADD PRIMARY KEY (`ID_preferencia`),
+  ADD PRIMARY KEY (`ID_Genero`,`ID_Usuario`),
   ADD KEY `ID_Genero` (`ID_Genero`),
   ADD KEY `ID_Usuario` (`ID_Usuario`);
 
@@ -208,12 +222,6 @@ ALTER TABLE `usuario`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `amigos`
---
-ALTER TABLE `amigos`
-  MODIFY `ID_amigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `artista`
@@ -231,43 +239,44 @@ ALTER TABLE `favorito_artista`
 -- AUTO_INCREMENT for table `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `ID_Genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `preferencia`
---
-ALTER TABLE `preferencia`
-  MODIFY `ID_preferencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_Genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
 --
 
 --
+-- Limitadores para a tabela `amigos`
+--
+ALTER TABLE `amigos`
+  ADD CONSTRAINT `amigos_ibfk_1` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`ID_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `amigos_ibfk_2` FOREIGN KEY (`ID_Usuario2`) REFERENCES `usuario` (`ID_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Limitadores para a tabela `artista`
 --
 ALTER TABLE `artista`
-  ADD CONSTRAINT `artista_ibfk_1` FOREIGN KEY (`ID_Genero`) REFERENCES `genero` (`ID_Genero`);
+  ADD CONSTRAINT `artista_ibfk_1` FOREIGN KEY (`ID_Genero`) REFERENCES `genero` (`ID_Genero`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `favorito_artista`
 --
 ALTER TABLE `favorito_artista`
-  ADD CONSTRAINT `favorito_artista_ibfk_1` FOREIGN KEY (`ID_Artista`) REFERENCES `artista` (`ID_Artista`),
-  ADD CONSTRAINT `favorito_artista_ibfk_2` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`ID_Usuario`);
+  ADD CONSTRAINT `favorito_artista_ibfk_1` FOREIGN KEY (`ID_Artista`) REFERENCES `artista` (`ID_Artista`) ON DELETE CASCADE,
+  ADD CONSTRAINT `favorito_artista_ibfk_2` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`ID_Usuario`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `preferencia`
 --
 ALTER TABLE `preferencia`
-  ADD CONSTRAINT `preferencia_ibfk_1` FOREIGN KEY (`ID_Genero`) REFERENCES `genero` (`ID_Genero`),
-  ADD CONSTRAINT `preferencia_ibfk_2` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`ID_Usuario`);
+  ADD CONSTRAINT `preferencia_ibfk_1` FOREIGN KEY (`ID_Genero`) REFERENCES `genero` (`ID_Genero`) ON DELETE CASCADE,
+  ADD CONSTRAINT `preferencia_ibfk_2` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`ID_Usuario`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
