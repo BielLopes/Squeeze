@@ -1,19 +1,27 @@
 <?php
 	require_once "Controller/verifica.php";
-	require_once 'Model/User.php';
-	require_once 'DAO/PreferenciaDAO.php';
-	require_once 'Model/Genero.php';
-	require_once 'DAO/GeneroDAO.php';
-
-	$consulta_Banco = new GeneroDAO();
-	$todosOsGeneros = $consulta_Banco->retornaAll();
-	$fecha = false;
-
+	require_once "ExibeCheckbox.php";
+	require_once "ExibeUser.php";
+	require_once "DAO/MigoDAO.php";
+	require_once "DAO/UserDAO.php";
+	require_once "DAO/GeneroDAO.php";
+	require_once "DAO/PreferenciaDAO.php";
+	require_once "Model/Migo.php";
+	require_once "Model/Genero.php";
+	/*error_reporting(0);
+	ini_set('display_errors', FALSE);
+*/
 	$id_User = $_SESSION['ID'];
 	$prefDAO = new PreferenciaDAO();
-	$minhasPreferencias = $prefDAO->preferenciasDoUsuario($id_User);
+	$minhasPreferen = $prefDAO->preferenciasDoUsuario($id_User);
 
-	$atual = " ";
+	$viewCheckbox = new ExibeCheckbox();
+
+	$viewMigos = new ExibeUser($id_User);
+
+	/*error_reporting(0);
+	ini_set('display_errors', FALSE);*/
+
 	/*$user = new User("Aleluia","","","");
 	echo $user->getNmUser();
 	$name = $_SESSION['Usuario'];
@@ -120,41 +128,9 @@
 		<form action="Controller/UpdatePrefer.php" method="post">
 		<input type="hidden" name="tipo" value="alteraPref">
 			<table class="w3-table-all w3-centered">
-			<?php	foreach ($todosOsGeneros as $genero) {
-
-					foreach($minhasPreferencias as $gener02){
-
-						if($genero->getId() == $gener02){
-							$atual ="checked";
-						}
-
-					}
-
-						if(!$fecha){
-							$fecha = true;
-							?>
-						<tr>
-						<td>
-							<input <?php echo $atual; ?> type="checkbox" name="<?php echo $genero->getId(); ?>" value="<?php echo $genero->getName(); ?>" ><?php echo $genero->getName(); ?>
-						</td>
-						<?php
-						}else{
-							$fecha = false;
-						?>					
-						<td>
-							<input <?php echo $atual; ?> type="checkbox" name="<?php echo $genero->getId(); ?>" value="<?php echo $genero->getName(); ?>" ><?php echo $genero->getName(); ?>
-						</td>
-						</tr>
-					<?php
-
-						}
-
-						$atual = " ";
-					}
-					if($fecha){
-						echo "</tr>";
-						$fecha = false;
-					}
+				<!--A view dos checkbox foi madularida pela classe ExibeCheckbox-->
+			<?php	
+				$viewCheckbox->exibeTodosselecionados($minhasPreferen);
 			?>
 			</table>
 			<a name="UltFavoritados"></a>
@@ -236,25 +212,18 @@
 		<div class="AmigosDisplay">
 			<h2>Amigos Atuais</h2><br/>
 			<ul class="w3-ul w3-border w3-hoverable">
-				<!--Colocar os amigo dinâmicamente-->
-				<li>
-					<h5>PHP - Joao da Couves</h5>
-					<form action="comdirmacao.php" method="GET">
-							<button class="w3-btn" type="submit"><img  src="Images/delete.png"></button>
-					</form>					
-				</li>
-				<li>
-					<h5>PHP - Joao da Couves</h5>
-					<form action="comdirmacao.php" method="GET">
-							<button class="w3-btn" type="submit"><img  src="Images/delete.png"></button>
-					</form>	
-				</li>
+			<?php
+			/*Colocando Todos os Amigos do Usuário*/
+				$viewMigos->exibeMigos();
+			?>
 			</ul>
 		</div>
 		<div id="formMigos">
-			<form method="post" action="#pesquisar">
-				<input id="pesquisa2" type="text" name="pesq" class="pesquisaMigos w3-border" placeholder="Pesquisar">
-				<a href="#pesquisar" onclick="aparecer('resultado')"><input type="submit" value="Pesquisar" class="btn_search"></a>
+			<form method="POST" action="#pesquisar">
+				<input type="hidden" name="tipo" value="pesquisaMigos">
+				<input id="pesquisa2" type="text" name="pesq" class="pesquisaMigos w3-border" placeholder="Pesquisar" required>
+				<a href="#pesquisar"  ><input type="submit" value="Pesquisar" class="btn_search"></a>
+				<!--onclick="aparecer('resultado')"-->
 				<a name="pesquisar"></a>
 			</form>
 		</div>
@@ -262,19 +231,18 @@
 			<h2>Pesquisa</h2><br/>
 			<a href="#Migos"><span onclick="sumir('resultado')" class="y3">x</span></a>
 			<ul class="w3-ul w3-border w3-hoverable">
-				<!--Colocar os amigo dinâmicamente-->
-				<li>
-					<h5>PHP - Joao da Couves</h5>
-					<form action="comdirmacao.php" method="GET">
-							<button class="w3-btn w3-gray" type="submit"><img  src="Images/add.png"></button>
-					</form>					
-				</li>
-				<li>
-					<h5>PHP - Joao da Couves</h5>
-					<form action="comdirmacao.php" method="GET">
-							<button class="w3-btn w3-gray" type="submit"><img  src="Images/add.png"></button>
-					</form>	
-				</li>
+			<?php
+			/*Colocando Pesquisa*/
+			if(array_key_exists( 'pesq' , $_POST )){
+				echo "<script>aparecer('resultado')</script>";
+				$pesquisa = $_POST['pesq'];
+				$viewMigos->exibePesquisa($pesquisa);
+			}else{
+				echo "<script>sumir('resultado');</script>";
+			}
+
+			?>
+
 			</ul>
 		</div>
 	</section>
@@ -284,8 +252,8 @@
 		<h2>Informações Cadastradas</h2>
 		<br/>
 		<ul class="w3-ul w3-border">
-			<li><h3>Nome de Usuário: _SECTION</h3></li>
-			<li><h3>E-mail: _SECTION</h3></li>
+			<li><h3>Nome de Usuário: <?php  echo $_SESSION['Name']; ?></h3></li>
+			<li><h3>E-mail: <?php  echo $_SESSION['Email']; ?></h3></li>
 		</ul>
 	</section>
 	<section class="container AlterPasword">
@@ -296,13 +264,13 @@
 					<h2>Alterar Senha:</h2>
 					<form action="Components/Confimacao2.html">
 						
-						<label class="w3-text-blue"><b>Senah Atual</b></label>
+						<label class="w3-text-blue"><b>Senha Atual:</b></label>
       					<input class="inputar w3-input w3-border" type="password" placeholder="Senha Atual">
 
-						<label class="w3-text-blue"><b>Nova Senha</b></label>
+						<label class="w3-text-blue"><b>Nova Senha:</b></label>
       					<input class="inputar w3-input w3-border" type="password" placeholder="Nova Atual">
 
-      					<label class="w3-text-blue"><b>Confirmar Nova Senha</b></label>
+      					<label class="w3-text-blue"><b>Confirmar Nova Senha:</b></label>
       					<input class="inputar w3-input w3-border" type="password" placeholder="Confirmar Nova Atual">	
 						<button type="button" onclick="aparecer('AlterarSenha')" value="Nenhum" class="btn w3-btn w3-blue">Salvar</button>
 							<div id="AlterarSenha" class="w3-modal">

@@ -1,17 +1,9 @@
 <?php
 
-	require_once '../Model/User.php';
+	require_once "Model/User.php";
+	require_once "Conect.php";
 
-	class UserDAO{
-        public function conectar(){
-			$host = 'localhost';
-			$usuario = 'root';
-			$senha = '';
-			$database = 'squeeze';
-			$conexao = new mysqli($host, $usuario, $senha, $database);
-
-			return $conexao;
-        }
+	class UserDAO extends Conect{
         
         function Novo($user){
 			$situacao = TRUE;
@@ -30,17 +22,22 @@
 
 		//Retorna Verdadeiro Quando Login não existe
 		function verificaLogin($login){
-			$conect = $this->conectar();
-			$query = "SELECT `Login` FROM `usuario` WHERE Login='$login'";
-			$row = $conect->query($query);
-			$conect->close();
-			if(mysqli_num_rows($row) == 0){
-				return true;
-			}else{
-				if(mysqli_num_rows($row) == 1){
-					return false;
+			try{
+				$conect = $this->conectar();
+				$query = "SELECT `Login` FROM `usuario` WHERE Login='$login'";
+				$row = $conect->query($query);
+				$conect->close();
+				if(mysqli_num_rows($row) == 0){
+					return true;
+				}else{
+					if(mysqli_num_rows($row) == 1){
+						return false;
+					}
 				}
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
 			}
+			
 		}
 		
 
@@ -77,5 +74,42 @@
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
 			}
 			return $situacao;
+		}
+
+		//Retorna o nome
+		function pesquisaNomePorId($id){
+			$nome = "";
+			try{
+				$conect = $this->conectar();
+                $query = "SELECT `Nome` FROM `usuario` WHERE ID_Usuario=$id";
+				$rs = $conect->query($query);
+				$conect->close();
+				$registro = mysqli_fetch_assoc($rs);
+				$nome = $registro['Nome'];
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}
+			return $nome;
+		}
+
+
+		/*Retorna um array de Ids*/
+		function pesquisaPorNome($nome){
+			$IdsUser = array();
+			try{
+				$conect = $this->conectar();
+				$query = "SELECT `ID_Usuario` AS `ID` FROM `usuario` WHERE Nome LIKE '%{$nome}%'";
+				$rs = $conect->query($query);
+				$conect->close();
+				if(mysqli_num_rows($rs) > 0){
+					while($row = mysqli_fetch_assoc($rs)){
+						array_push($IdsUser, $row['ID']);
+					}
+				}
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}
+
+			return $IdsUser;
 		}
     }

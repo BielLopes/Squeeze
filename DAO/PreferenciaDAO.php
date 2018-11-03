@@ -1,15 +1,8 @@
 <?php
 
-	class PreferenciaDAO{
-        public function conectar(){
-			$host = 'localhost';
-			$usuario = 'root';
-			$senha = '';
-			$database = 'squeeze';
-			$conexao = new mysqli($host, $usuario, $senha, $database);
+	require_once "Conect.php";
 
-			return $conexao;
-		}
+	class PreferenciaDAO extends Conect{
 		
 		function criaPreferencia($id_User, $id_Genero){
             try{
