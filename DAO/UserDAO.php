@@ -1,6 +1,5 @@
 <?php
 
-	require_once "Model/User.php";
 	require_once "Conect.php";
 
 	class UserDAO extends Conect{
@@ -10,6 +9,21 @@
 			try{
 				$conect = $this->conectar();
                 $query = "INSERT INTO `usuario`(`Nome`, `Login`, `Senha`, `E-mail`) VALUES ('{$user->getNmUser()}','{$user->getLogin()}','{$user->getSenha()}','{$user->getEmail()}')";
+				$conect->query($query);
+				$conect->close();
+			}catch(Exception $ex){
+				$situacao = FALSE;
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}
+			return $situacao;
+		}
+
+		
+		function updateUser($user){
+			$situacao = TRUE;
+			try{
+				$conect = $this->conectar();
+                $query = "UPDATE `usuario` SET `Nome`='{$user->getNmUser()}',`Login`='{$user->getLogin()}', `Senha`='{$user->getSenha()}',`E-mail`='{$user->getEmail()}' WHERE ID_Usuario = {$user->getIdUser()}";
 				$conect->query($query);
 				$conect->close();
 			}catch(Exception $ex){

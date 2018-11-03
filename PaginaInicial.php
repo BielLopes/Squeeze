@@ -262,16 +262,16 @@
 			<tr>
 				<td>
 					<h2>Alterar Senha:</h2>
-					<form action="Components/Confimacao2.html">
-						
+					<form action="Controller/AlteraSenha.php" method="POST">
+						<input type="hidden" name="tipo" value="mudaSenha">
 						<label class="w3-text-blue"><b>Senha Atual:</b></label>
-      					<input class="inputar w3-input w3-border" type="password" placeholder="Senha Atual">
+      					<input name="senhaAtl" class="inputar w3-input w3-border" type="password" placeholder="Senha Atual">
 
 						<label class="w3-text-blue"><b>Nova Senha:</b></label>
-      					<input class="inputar w3-input w3-border" type="password" placeholder="Nova Atual">
+      					<input name="novaSenha" class="inputar w3-input w3-border" type="password" placeholder="Nova Atual">
 
       					<label class="w3-text-blue"><b>Confirmar Nova Senha:</b></label>
-      					<input class="inputar w3-input w3-border" type="password" placeholder="Confirmar Nova Atual">	
+      					<input name="confirmaNovaSenha" class="inputar w3-input w3-border" type="password" placeholder="Confirmar Nova Atual">	
 						<button type="button" onclick="aparecer('AlterarSenha')" value="Nenhum" class="btn w3-btn w3-blue">Salvar</button>
 							<div id="AlterarSenha" class="w3-modal">
 								<div class="Formular">
