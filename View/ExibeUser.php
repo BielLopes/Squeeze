@@ -30,11 +30,11 @@
                     ?>
                         <li>
                         <h5><?php echo $name; ?></h5>
-                        <form action="Controller/GerenciaMigos.php" method="POST">
+                        <form action="../Controller/GerenciaMigos.php" method="POST">
                             <input type="hidden" name="tipo" value="Delete">
                             <input type="hidden" name="ID_User" value="<?php echo $this->id_User; ?>">
                             <input type="hidden" name="ID_Migo" value="<?php echo $migo->getIdMigo(); ?>">
-                            <button class="w3-btn" type="submit"><img  src="Images/delete.png"></button>
+                            <button class="w3-btn" type="submit"><img  src="../Images/delete.png"></button>
                         </form>					
                     </li>
                     <?php
@@ -68,11 +68,11 @@
 
                     <li>
                         <h5><?php echo $name; ?></h5>
-                        <form action="Controller/GerenciaMigos.php" method="POST">
+                        <form action="../Controller/GerenciaMigos.php" method="POST">
                             <input type="hidden" name="tipo" value="Add">
                             <input type="hidden" name="ID_User" value="<?php echo $this->id_User; ?>">
                             <input type="hidden" name="ID_Migo" value="<?php echo $id; ?>">
-                            <button class="w3-btn w3-gray" type="submit"><img  src="Images/add.png"></button>
+                            <button class="w3-btn w3-gray" type="submit"><img  src="../Images/add.png"></button>
                         </form>					
                     </li>
                     <?php

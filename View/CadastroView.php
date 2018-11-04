@@ -1,9 +1,9 @@
 <?php
 
 	require_once "ExibeCheckbox.php";
-	require_once "Model/User.php";
-	require_once 'DAO/GeneroDAO.php';
-	require_once "Model/Genero.php";
+	require_once "../Model/User.php";
+	require_once "../DAO/GeneroDAO.php";
+	require_once "../Model/Genero.php";
 	$viewCheckbox = new ExibeCheckbox();
 	
 	/*var_dump($todosOsGeneros);
@@ -21,9 +21,9 @@
 <html>
 <head>
 		<meta charset="utf-8">
-	  <link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
-	  <link rel="stylesheet" href="Css/w3.css" type="text/css">
-	  <link rel="stylesheet" href="Css/Cadastro.css" type="text/css">
+	  <link rel="stylesheet" href="../Fontes/stylesheet.css" type="text/css">
+	  <link rel="stylesheet" href="../Css/w3.css" type="text/css">
+	  <link rel="stylesheet" href="../Css/Cadastro.css" type="text/css">
 	<title>Squeeze Cadastro</title>
 	
 </head>
@@ -33,7 +33,7 @@
 	    
 	  <div class="Formulario">
 	    <h2>Cadastrar</h2>
-	    <form  name="e-mail" action="Controller/Cadastro.php" method="post">
+	    <form  name="e-mail" action="../Controller/Cadastro.php" method="post">
 				<input type="hidden" name="tipo" value="Cadastro">
 	     	<input required type="text" class="pesquisa w3-input w3-border" name="nome" placeholder="Nome De Usuário"/><br/>
 	      <input required type="email" class="pesquisa w3-input w3-border" name="e-mail" placeholder="e-mail"/><br/>

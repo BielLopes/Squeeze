@@ -31,7 +31,7 @@
                 $_SESSION['Senha'] = $logaUser->getSenha();
                 $_SESSION['Email'] = $logaUser->getEmail();
                 $_SESSION['Login'] = $logaUser->getLogin();
-                echo "<script>location.href='../PaginaInicial.php';</script>";
+                echo "<script>location.href='../View/PaginaInicial.php';</script>";
 
                 }else{
                     echo "<script>alert('Login e/ou Senha Incorreto(s)');</script>";

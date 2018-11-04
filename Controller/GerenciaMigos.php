@@ -20,7 +20,7 @@
         }else{
             echo "<script>alert('Não foi possivel criar laços de amizade');</script>";
         }
-        echo "<script>location.href='../PaginaInicial.php#Migos'</script>";
+        echo "<script>location.href='../View/PaginaInicial.php#Migos'</script>";
     }
     
     if($_POST['tipo'] == "Delete"){
@@ -30,5 +30,5 @@
         }else{
             echo "<script>alert('Não foi possivel remover');</script>";
         }
-        echo "<script>location.href='../PaginaInicial.php#Migos'</script>";
+        echo "<script>location.href='../View/PaginaInicial.php#Migos'</script>";
     }

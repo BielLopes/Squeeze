@@ -1,14 +1,16 @@
 <?php
-	require_once "Controller/verifica.php";
+	require_once "../Controller/verifica.php";
 	require_once "ExibeCheckbox.php";
 	require_once "ExibeUser.php";
-	require_once "DAO/MigoDAO.php";
-	require_once "DAO/UserDAO.php";
-	require_once "DAO/GeneroDAO.php";
-	require_once "DAO/PreferenciaDAO.php";
-	require_once "Model/Migo.php";
-	require_once "Model/Genero.php";
-	/*error_reporting(0);
+	require_once "../DAO/MigoDAO.php";
+	require_once "../DAO/UserDAO.php";
+	require_once "../DAO/GeneroDAO.php";
+	require_once "../DAO/PreferenciaDAO.php";
+	require_once "../Model/Migo.php";
+	require_once "../Model/Genero.php";
+	/*
+	Desabilita os warning e erros:
+	error_reporting(0);
 	ini_set('display_errors', FALSE);
 */
 	$id_User = $_SESSION['ID'];
@@ -33,13 +35,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="Css/components.css" type="text/css">
-	<link rel="stylesheet" href="Css/Comunit.css" type="text/css">
-	<link rel="stylesheet" href="Css/Confirma.css" type="text/css">
-	<link rel="stylesheet" href="Css/Inicial.css" type="text/css">
-	<link rel="stylesheet" href="Css/reset.css" type="text/css">
-	<link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
-	<link rel="stylesheet" href="Css/w3.css" type="text/css">
+	<link rel="stylesheet" href="../Css/components.css" type="text/css">
+	<link rel="stylesheet" href="../Css/Comunit.css" type="text/css">
+	<link rel="stylesheet" href="../Css/Confirma.css" type="text/css">
+	<link rel="stylesheet" href="../Css/Inicial.css" type="text/css">
+	<link rel="stylesheet" href="../Css/reset.css" type="text/css">
+	<link rel="stylesheet" href="../Fontes/stylesheet.css" type="text/css">
+	<link rel="stylesheet" href="../Css/w3.css" type="text/css">
 	<title>Inicial</title>
 </head>
 <body class="Fundo">
@@ -49,7 +51,7 @@
 				<div class="Formular">
 					<span onclick="sumir('exclude')" class="w3-closebtn">&times;</span>
 					<h1>Você tem certeza que deseja excluir Sua Conta?</h1>
-					<form action="Controller/cancelaConta.php" method="post">
+					<form action="../Controller/cancelaConta.php" method="post">
 						<input type="hidden" name="tipo" value="deleta">
 						<input type="hidden" name="ID_User" value="ID_PHP">
 						<button class="btn5 w3-btn w3-blue" action="">Deletar</button>
@@ -83,7 +85,7 @@
 				<div class="Formular">
 					<span onclick="sumir('exit')" class="w3-closebtn">&times;</span>
 					<h1>Você tem certeza que deseja Deslogar?</h1>
-					<form action="Controller/LogOut.php" method="post">
+					<form action="../Controller/LogOut.php" method="post">
 						<input type="hidden" name="logout" value="true">
 						<button class="btn5 w3-btn w3-blue" action="">Sair</button>
 						<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('exit')">Cancelar</button>
@@ -93,12 +95,12 @@
 
 
 	<div id="BackToTop">
-		<a href="#Preferencias1"><img src="Images/backtotop.png"></a>
+		<a href="#Preferencias1"><img src="../Images/backtotop.png"></a>
 	</div>
 	<header class="Fixar">
 		<nav>
 			<ul class="w3-navbar w3-red">
-				<li><a href="PaginaInicial.php" class="w3-grey"><img src="imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
+				<li><a href="PaginaInicial.php" class="w3-grey"><img src="../Imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
 				<li><a href="PaginaInicial.html">Página Inicial</a></li>
 				<li><a href="Favoritos.html">Favoritos</a></li>
 				<li><a href="Recomendacoes.html">Recomendações</a></li>
@@ -125,7 +127,7 @@
 	</section>
 	<section id="Preferencias" class="container Gener">
 		<h2 >Gernciar Preferências</h2>
-		<form action="Controller/UpdatePrefer.php" method="post">
+		<form action="../Controller/UpdatePrefer.php" method="post">
 		<input type="hidden" name="tipo" value="alteraPref">
 			<table class="w3-table-all w3-centered">
 				<!--A view dos checkbox foi madularida pela classe ExibeCheckbox-->
@@ -153,12 +155,12 @@
 			<ul>
 				<li>
 					<div class="component">
-						<img src="Images/Artista.jpg">
+						<img src="../Images/Artista.jpg">
 						<h1>Pitty</h1>
 						<form method="GET">
 							<input type="hidden" name="id" value="PHP">
 							<button class="btn2 w3-red" type="submit">
-								<img src="Images/deslike.png">
+								<img src="../Images/deslike.png">
 							</button>
 						</form>
 						<nav>
@@ -177,12 +179,12 @@
 				</li>
 				<li>
 					<div class="component">
-						<img src="Images/Artista.jpg">
+						<img src="../Images/Artista.jpg">
 						<h1>Mc Biel</h1>
 						<form method="GET">
 							<input type="hidden" name="id" value="PHP">
 							<button class="btn2 w3-red" type="submit">
-								<img src="Images/deslike.png">
+								<img src="../Images/deslike.png">
 							</button>
 						</form>
 						<nav>
@@ -233,6 +235,7 @@
 			<ul class="w3-ul w3-border w3-hoverable">
 			<?php
 			/*Colocando Pesquisa*/
+			//array_key_exists(indice, array) verifica se o incice é válido 
 			if(array_key_exists( 'pesq' , $_POST )){
 				echo "<script>aparecer('resultado')</script>";
 				$pesquisa = $_POST['pesq'];
@@ -262,7 +265,7 @@
 			<tr>
 				<td>
 					<h2>Alterar Senha:</h2>
-					<form action="Controller/AlteraSenha.php" method="POST">
+					<form action="../Controller/AlteraSenha.php" method="POST">
 						<input type="hidden" name="tipo" value="mudaSenha">
 						<label class="w3-text-blue"><b>Senha Atual:</b></label>
       					<input name="senhaAtl" class="inputar w3-input w3-border" type="password" placeholder="Senha Atual">

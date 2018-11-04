@@ -54,15 +54,15 @@
                     echo "<script>location.href='../HomePage.html';</script>";
                 }else{
                     echo "<script>alert('Não Foi Possivel Cadastrar-te! Tente Novamente!');</script>";
-                    echo "<script>location.href='../CadastroView.php';</script>";
+                    echo "<script>location.href='../View/CadastroView.php';</script>";
                 }
                 }else{
                     echo "<script>alert('As Senhas não Batem!');</script>";
-                    echo "<script>location.href='../CadastroView.php';</script>";
+                    echo "<script>location.href='../View/CadastroView.php';</script>";
                 }
                     
         }else{
             echo "<script>alert('O Login Escolhido Não Está Disponível! Tente Outro Por Favor');</script>";
-            echo "<script>location.href='../CadastroView.php';</script>";
+            echo "<script>location.href='../View/CadastroView.php';</script>";
         }
     }

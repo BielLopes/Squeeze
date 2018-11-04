@@ -11,7 +11,7 @@
             echo "<script>location.href='../HomePage.html';</script>";
         }else{
             echo "<script>alert('Olá, não vai embora não querido! Sorry');</script>";
-            echo "<script>location.href='../PaginaInicial.php';</script>";
+            echo "<script>location.href='../View/PaginaInicial.php';</script>";
         }
     }
 

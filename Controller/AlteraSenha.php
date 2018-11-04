@@ -12,12 +12,12 @@
 
         if($novaSenha != $confirmaNovaSenha){
             echo "<script>alert('Senha Atual Incorreta!');</script>";
-            echo "<script>location.href='../PaginaInicial.php#AlteraSenha';</script>";
+            echo "<script>location.href='../View/PaginaInicial.php#AlteraSenha';</script>";
         }
 
         if($senhaAtual != $_SESSION['Senha']){
             echo "<script>alert('As Senhas não Batem!');</script>";
-            echo "<script>location.href='../PaginaInicial.php#AlteraSenha';</script>";
+            echo "<script>location.href='../View/PaginaInicial.php#AlteraSenha';</script>";
         }
 
         $novaSenha = crypt($novaSenha, "sqz");
@@ -28,10 +28,10 @@
         if($bol){
             $_SESSION['Senha'] = $novaSenha;
             echo "<script>alert('SENHA ALTERADO COM SUCESSO!');</script>";
-            echo "<script>location.href='../PaginaInicial.php#AlteraSenha';</script>";
+            echo "<script>location.href='../View/PaginaInicial.php#AlteraSenha';</script>";
         }else{
             echo "<script>alert('ERRO AO ALTERAR SENHA!');</script>";
-            echo "<script>location.href='../PaginaInicial.php#AlteraSenha';</script>";
+            echo "<script>location.href='../View/PaginaInicial.php#AlteraSenha';</script>";
         }
 
     }

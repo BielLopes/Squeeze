@@ -30,7 +30,7 @@
             $prefDAO->criaPreferencia($id_User, $id);
         }
 
-        echo "<script>location.href='../PaginaInicial.php';</script>";
+        echo "<script>location.href='../View/PaginaInicial.php';</script>";
 
     }else{
         echo "<script>alert('Você não deveria estar aqui!!!!!!');</script>";
