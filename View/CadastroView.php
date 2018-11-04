@@ -21,9 +21,9 @@
 <html>
 <head>
 		<meta charset="utf-8">
-	  <link rel="stylesheet" href="../Fontes/stylesheet.css" type="text/css">
-	  <link rel="stylesheet" href="../Css/w3.css" type="text/css">
-	  <link rel="stylesheet" href="../Css/Cadastro.css" type="text/css">
+	  <link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
+	  <link rel="stylesheet" href="Css/w3.css" type="text/css">
+	  <link rel="stylesheet" href="Css/Cadastro.css" type="text/css">
 	<title>Squeeze Cadastro</title>
 	
 </head>

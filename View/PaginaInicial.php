@@ -41,13 +41,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="../Css/components.css" type="text/css">
-	<link rel="stylesheet" href="../Css/Comunit.css" type="text/css">
-	<link rel="stylesheet" href="../Css/Confirma.css" type="text/css">
-	<link rel="stylesheet" href="../Css/Inicial.css" type="text/css">
-	<link rel="stylesheet" href="../Css/reset.css" type="text/css">
-	<link rel="stylesheet" href="../Fontes/stylesheet.css" type="text/css">
-	<link rel="stylesheet" href="../Css/w3.css" type="text/css">
+	<link rel="stylesheet" href="Css/components.css" type="text/css">
+	<link rel="stylesheet" href="Css/Comunit.css" type="text/css">
+	<link rel="stylesheet" href="Css/Confirma.css" type="text/css">
+	<link rel="stylesheet" href="Css/Inicial.css" type="text/css">
+	<link rel="stylesheet" href="Css/reset.css" type="text/css">
+	<link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
+	<link rel="stylesheet" href="Css/w3.css" type="text/css">
 	<title>Inicial</title>
 </head>
 <body class="Fundo">
@@ -101,12 +101,12 @@
 
 
 	<div id="BackToTop">
-		<a href="#Preferencias1"><img src="../Images/backtotop.png"></a>
+		<a href="#Preferencias1"><img src="Images/backtotop.png"></a>
 	</div>
 	<header class="Fixar">
 		<nav>
 			<ul class="w3-navbar w3-red">
-				<li><a href="PaginaInicial.php" class="w3-grey"><img src="../Imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
+				<li><a href="PaginaInicial.php" class="w3-grey"><img src="Imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
 				<li><a href="PaginaInicial.html">Página Inicial</a></li>
 				<li><a href="Favoritos.html">Favoritos</a></li>
 				<li><a href="Recomendacoes.html">Recomendações</a></li>
@@ -162,58 +162,6 @@
 			<?php
 				$viewFavoritos->exibeX(qtnFavoritos);
 			?>
-				<!--
-				<li>
-					<div class="component">
-						<img src="../Images/Artista.jpg">
-						<h1>Pitty</h1>
-						<form method="GET">
-							<input type="hidden" name="id" value="PHP">
-							<button class="btn2 w3-red" type="submit">
-								<img src="../Images/deslike.png">
-							</button>
-						</form>
-						<nav>
-							<ul >
-							  <li>Gênero: PHP</li>	
-							  <li >Amigos que Favoritaram
-								<ul class="w3-ul w3-border">
-									<li>Jão das couves</li>
-									<li>Jãozinho</li>
-									<li>Jé Pequeno</li>
-								</ul>
-							  </li>
-						  </ul>
-						</nav>
-					</div>
-				</li>
-				<li>
-					<div class="component">
-						<img src="../Images/Artista.jpg">
-						<h1>Mc Biel</h1>
-						<form method="GET">
-							<input type="hidden" name="id" value="PHP">
-							<button class="btn2 w3-red" type="submit">
-								<img src="../Images/deslike.png">
-							</button>
-						</form>
-						<nav>
-							<ul >
-							  <li>Gênero: PHP</li>	
-							  <li >Amigos que Favoritaram
-								<ul class="w3-ul w3-border">
-									<li>Jão das couves</li>
-									<li>Jãozinho</li>
-									<li>Jé Pequeno</li>
-								</ul>
-							  </li>
-						  </ul>
-						</nav>
-					</div>
-				</li>
-				<li>
-				-->
-					<!--Mais artista colocados dinâmicamente-->
 				</li>
 			</ul>
 			
