@@ -32,3 +32,5 @@
         }
         echo "<script>location.href='../View/PaginaInicial.php#Migos'</script>";
     }
+
+    echo "<script>location.href='../View/PaginaInicial.php#Migos'</script>";

@@ -2,9 +2,11 @@
 	require_once "../Controller/verifica.php";
 	require_once "ExibeCheckbox.php";
 	require_once "ExibeUser.php";
+	require_once "ExibeFavorito.php";
 	require_once "../DAO/MigoDAO.php";
 	require_once "../DAO/UserDAO.php";
 	require_once "../DAO/GeneroDAO.php";
+	require_once "../DAO/FavoritoDAO.php";
 	require_once "../DAO/PreferenciaDAO.php";
 	require_once "../Model/Migo.php";
 	require_once "../Model/Genero.php";
@@ -20,6 +22,10 @@
 	$viewCheckbox = new ExibeCheckbox();
 
 	$viewMigos = new ExibeUser($id_User);
+
+	$viewFavoritos = new ExibeFavorito($id_User);
+
+	define('qtnFavoritos', 4);
 
 	/*error_reporting(0);
 	ini_set('display_errors', FALSE);*/
@@ -153,6 +159,10 @@
 		<div>
 			<h2>Ultimos Aritas Favoritados</h2>
 			<ul>
+			<?php
+				$viewFavoritos->exibeX(qtnFavoritos);
+			?>
+				<!--
 				<li>
 					<div class="component">
 						<img src="../Images/Artista.jpg">
@@ -202,6 +212,7 @@
 					</div>
 				</li>
 				<li>
+				-->
 					<!--Mais artista colocados dinâmicamente-->
 				</li>
 			</ul>

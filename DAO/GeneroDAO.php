@@ -21,6 +21,22 @@
             return $generos;
         }
 
+        function retornaNomePorID($id_Genero){
+            $name = "";
+            try{
+				$conect = $this->conectar();
+				$query = "SELECT `Nome` FROM `genero` WHERE ID_Genero=$id_Genero";
+				$rs = $conect->query($query);
+				$conect->close();
+                $row = mysqli_fetch_assoc($rs);
+                $name = $row['Nome']; 
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}
+
+			return $name;
+        }
+
         /*function criaPreferencia($id_User, $id_Genero){
             try{
 				$conect = $this->conectar();

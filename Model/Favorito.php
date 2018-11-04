@@ -28,7 +28,7 @@
 			return $this->id_Artista;
         }
 		function setIdArtista($_id_Artista){
-			$this->id_Amigo = $_id_Amigo;
+			$this->id_Artista = $_id_Artista;
 		}
 
 	}

@@ -11,11 +11,12 @@
 			$this->ID_User = $_id_User;
         }
 
+		//Tanto include qunto delete recebem como parametro um objeto do tipo artista
         function include($favorito){
             $situacao = TRUE;
 			try{
 				$conect = $this->conectar();
-                $query = "INSERT INTO `favorito_artista`(`ID_Artista`, `ID_Usuario`) VALUES ($ID_User, {$favorito->getIdArtista()})";
+                $query = "INSERT INTO `favorito_artista`(`ID_Artista`, `ID_Usuario`) VALUES ({$favorito->getIdArtista()}, {$this->ID_User}, )";
 				$conect->query($query);
 				$conect->close();
 			}catch(Exception $ex){
@@ -28,7 +29,7 @@
             $situacao = TRUE;
 			try{
 				$conect = $this->conectar();
-                $query = "DELETE FROM `favorito_artista` WHERE ID_FA={$favorito->getId()} AND ID_Usuario=$ID_User";
+				$query = "DELETE FROM `favorito_artista` WHERE ID_Artista={$favorito->getIdArtista()} AND ID_Usuario={$this->ID_User}";
 				$conect->query($query);
 				$conect->close();
 			}catch(Exception $ex){
@@ -41,10 +42,12 @@
             $situacao = FALSE;
 			try{
 				$conect = $this->conectar();
-                $query = "SELECT * FROM `favorito_artista` WHERE ID_Artista=$id_Artista AND ID_Usuario=$ID_User";
-				$row = $conect->query($query);
-                $conect->close();
-                if(mysqli_num_rows($row) == 1){
+				$query = "SELECT COUNT(ID_FA) AS result FROM `favorito_artista` WHERE ID_Artista=$id_Artista AND ID_Usuario={$this->ID_User}";
+				$rs = $conect->query($query);
+				$conect->close();
+				$row = mysqli_fetch_assoc($rs);
+				$result = $row['result'];
+                if($result != 0){
                     $situacao = TRUE;
                 }
 			}catch(Exception $ex){
@@ -58,7 +61,7 @@
             $names= array();
 			try{
 				$conect = $this->conectar();
-                $query = "SELECT usuario.Nome AS `Name` FROM usuario inner join amigos on amigos.ID_Usuario = usuario.ID_Usuario INNER join favorito_artista on favorito_artista.ID_Usuario = amigos.ID_Usuario where amigos.ID_Usuario2 =$ID_User AND favorito_artista.ID_Artista = $id_Artista";
+                $query = "SELECT usuario.Nome AS `Name` FROM usuario inner join amigos on amigos.ID_Usuario = usuario.ID_Usuario INNER join favorito_artista on favorito_artista.ID_Usuario = amigos.ID_Usuario where amigos.ID_Usuario2 ={$this->ID_User} AND favorito_artista.ID_Artista = $id_Artista";
 				$rs = $conect->query($query);
 				$conect->close();
 				while($row = mysqli_fetch_assoc($rs)){
@@ -75,7 +78,7 @@
 			$artistas = array();
 			try{
 				$conect = $this->conectar();
-                $query = "SELECT artista.ID_Artista AS `ID`, artista.Nome AS `Name`, artista.ID_Genero FROM `artista` INNER JOIN `favorito_artista` ON favorito_artista.ID_Artista = artista.ID_Artista WHERE favorito_artista.ID_Usuario = $ID_User order by favorito_artista.ID_FA DESC";
+                $query = "SELECT artista.ID_Artista AS `ID`, artista.Nome AS `Name`, artista.ID_Genero FROM `artista` INNER JOIN `favorito_artista` ON favorito_artista.ID_Artista = artista.ID_Artista WHERE favorito_artista.ID_Usuario = {$this->ID_User} order by favorito_artista.ID_FA DESC";
 				$rs = $conect->query($query);
 				$conect->close();
 				while($row = mysqli_fetch_assoc($rs)){
@@ -93,7 +96,7 @@
 			$artistas = array();
 			try{
 				$conect = $this->conectar();
-                $query = "SELECT DISTINCT artista.ID_Artista AS `ID`, artista.Nome AS `Name`, artista.ID_Genero FROM `artista` INNER JOIN `favorito_artista` ON favorito_artista.ID_Artista = artista.ID_Artista INNER JOIN `amigos` ON favorito_artista.ID_Usuario = amigos.ID_Usuario WHERE amigos.ID_Usuario2 = $ID_User order by favorito_artista.ID_FA DESC";
+                $query = "SELECT DISTINCT artista.ID_Artista AS `ID`, artista.Nome AS `Name`, artista.ID_Genero FROM `artista` INNER JOIN `favorito_artista` ON favorito_artista.ID_Artista = artista.ID_Artista INNER JOIN `amigos` ON favorito_artista.ID_Usuario = amigos.ID_Usuario WHERE amigos.ID_Usuario2 = {$this->ID_User} order by favorito_artista.ID_FA DESC";
 				$rs = $conect->query($query);
 				$conect->close();
 				while($row = mysqli_fetch_assoc($rs)){

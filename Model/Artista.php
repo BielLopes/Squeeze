@@ -27,10 +27,10 @@ class Artista{
         
 
         function getId_Genero(){
-			return $this->idUser;
+			return $this->id_genero;
 		}
-		function setId_Genero($_id){
-			$this->id = $_id;
+		function setId_Genero($_id_genero){
+			$this->id_genero = $_id_genero;
 		}
 
 	}
