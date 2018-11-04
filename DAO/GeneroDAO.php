@@ -21,7 +21,7 @@
             return $generos;
         }
 
-        function criaPreferencia($id_User, $id_Genero){
+        /*function criaPreferencia($id_User, $id_Genero){
             try{
 				$conect = $this->conectar();
                 $query = "INSERT INTO `preferencia`(`ID_Genero`, `ID_Usuario`) VALUES ($id_Genero, $id_User)";
@@ -41,5 +41,5 @@
 			}catch(Exception $ex){
 				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
             }
-        }
+        }*/
     }

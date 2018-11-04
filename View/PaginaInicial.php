@@ -231,7 +231,13 @@
 		</div>
 		<div id="resultado" class="AmigosDisplay" >
 			<h2>Pesquisa</h2><br/>
-			<a href="#Migos"><span onclick="sumir('resultado')" class="y3">x</span></a>
+			<?php
+			if(array_key_exists( 'pesq' , $_POST )){
+				echo "<a href=\"#Migos\"><span onclick=\"sumir('resultado')\" class=\"y3\">x</span></a>";
+			}
+			?>
+
+			<!--<a href="#Migos"><span onclick="sumir('resultado')" class="y3">x</span></a>-->
 			<ul class="w3-ul w3-border w3-hoverable">
 			<?php
 			/*Colocando Pesquisa*/

@@ -9,7 +9,7 @@
 
     $mudaMigo = new MigoDAO();
 
-    $id_user = $_POST['ID_User'];
+    $id_user = $_SESSION['ID'];
     $id_migo = $_POST['ID_Migo'];
     $amizade = new Migo($id_user, $id_migo);
 

@@ -26,6 +26,8 @@
             }
 		}
 
+
+		/*Retorna um array com o ID dos gêneros selecionados*/
 		function preferenciasDoUsuario($id_User){
 			$preferencias = array();
 			try{
