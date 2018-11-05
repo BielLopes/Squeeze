@@ -1,5 +1,4 @@
 <?php
-    include "verifica.php";
     require_once '../Model/User.php';
     require_once '../DAO/UserDAO.php';
     require_once '../Model/Genero.php';
@@ -10,7 +9,6 @@
 	$todosOsGeneros = $consulta_Banco->retornaAll();
 
     $novoDao = new UserDAO();
-
 
     if($_POST['tipo'] == "Cadastro"){
         /*Primeiramente apenas os dados pessoais, depois as preferências*/

@@ -11,7 +11,6 @@
     text-align: center;
 }
 .btn{
-
     width: auto;
     margin-top: 2.5%;
     margin-left: 65%;
@@ -49,6 +48,13 @@
     border:solid 0.5px transparent;
     color:white;
 }
+/*exclude*/
+.btnnn{
+    text-align: right;
+    float:right;
+    margin-right: 8%;
+}
+
 .y3{
     border:solid black 1px;float:right;
     width:25px;text-align:center;
@@ -91,7 +97,4 @@
     position: absolute;
     margin-left: 0%;
     margin-top: 5.5%;
-}
-#resultado{
-    
 }

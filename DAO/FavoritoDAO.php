@@ -1,7 +1,8 @@
 <?php
-
+	
 	require_once "Conect.php";
 	require_once "../Model/Artista.php";
+	
 
 	class FavoritoDAO extends Conect{
 
@@ -16,7 +17,7 @@
             $situacao = TRUE;
 			try{
 				$conect = $this->conectar();
-                $query = "INSERT INTO `favorito_artista`(`ID_Artista`, `ID_Usuario`) VALUES ({$favorito->getIdArtista()}, {$this->ID_User}, )";
+                $query = "INSERT INTO `favorito_artista`(`ID_Artista`, `ID_Usuario`) VALUES ({$favorito->getIdArtista()}, {$this->ID_User})";
 				$conect->query($query);
 				$conect->close();
 			}catch(Exception $ex){

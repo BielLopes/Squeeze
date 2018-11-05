@@ -107,11 +107,11 @@
 		<nav>
 			<ul class="w3-navbar w3-red">
 				<li><a href="PaginaInicial.php" class="w3-grey"><img src="Imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
-				<li><a href="PaginaInicial.html">Página Inicial</a></li>
-				<li><a href="Favoritos.html">Favoritos</a></li>
-				<li><a href="Recomendacoes.html">Recomendações</a></li>
-				<li><a href="Artistas.html">Artistas</a></li>
-				<li><a href="Genero.html">Gêneros Musicais</a></li>
+				<li><a href="PaginaInicial.php">Página Inicial</a></li>
+				<li><a href="Favoritos.php">Favoritos</a></li>
+				<li><a href="Recomendacoes.php">Recomendações</a></li>
+				<li><a href="Artistas.php">Artistas</a></li>
+				<li><a href="Genero.php">Gêneros Musicais</a></li>
 				<li class="w3-right"><a onclick="aparecer('exit')">Sair</a></li>	
 				<li class="w3-right"><a href="#"><?php  echo $_SESSION['Name']; ?> </a></li>						
 			</ul>
@@ -158,8 +158,10 @@
 	<section class="container UltimosFavorit">
 		<div>
 			<h2>Ultimos Aritas Favoritados</h2>
+			
 			<ul>
 			<?php
+				/* Ultimos Artista Favoritados */
 				$viewFavoritos->exibeX(qtnFavoritos);
 			?>
 				</li>
@@ -189,12 +191,13 @@
 			</form>
 		</div>
 		<div id="resultado" class="AmigosDisplay" >
-			<h2>Pesquisa</h2><br/>
-			<?php
-			if(array_key_exists( 'pesq' , $_POST )){
+		<?php
+			
 				echo "<a href=\"#Migos\"><span onclick=\"sumir('resultado')\" class=\"y3\">x</span></a>";
-			}
-			?>
+			
+		?>
+			<h2>Pesquisa</h2><br/>
+			
 
 			<!--<a href="#Migos"><span onclick="sumir('resultado')" class="y3">x</span></a>-->
 			<ul class="w3-ul w3-border w3-hoverable">

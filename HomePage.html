@@ -2,11 +2,11 @@
 <html>
 <head>
 	<title>Squeeze Home</title>
-	<link rel="stylesheet" href="Css/HomePage.css">
-	<link rel="stylesheet" href="Css/reset.css">
-	<link rel="stylesheet" href="Css/w3.css">
-	<link rel="stylesheet" href="Css/style.css" type="text/css">
-	<link rel="stylesheet" href="Fontes/stylesheet.css">
+	<link rel="stylesheet" href="View/Css/HomePage.css">
+	<link rel="stylesheet" href="View/Css/reset.css">
+	<link rel="stylesheet" href="View/Css/w3.css">
+	<link rel="stylesheet" href="View/Css/style.css" type="text/css">
+	<link rel="stylesheet" href="View/Fontes/stylesheet.css">
 
 	<meta charset=utf-8>
 
@@ -15,11 +15,11 @@
 	<header>
 		<nav >
 			<div  class="Fixar HmeNav w3-bar w3-red">
-					<a onclick="aparecer('Login')" class="w3-bar-item w3-button">Login</a>
-					<a href="View/CadastroView.php" class="w3-bar-item w3-button">Cadastre-se</a>
+					<a class="aa" onclick="aparecer('Login')" class="w3-bar-item w3-button">Login</a>
+					<a class="aa" href="View/CadastroView.php" class="w3-bar-item w3-button">Cadastre-se</a>
 					<img src="" alt="logo">		
 			</div>
-			<button id="btn" class="w3-btn"><a href="View/CadastroView.php" >VIRE ASSINANTE</a></button>
+			<a href="View/CadastroView.php" ><button id="btn" class="w3-btn">VIRE ASSINANTE</button></a>
 		</nav>
 	</header>
 	<br/>
@@ -33,8 +33,8 @@
     <h2>Login</h2>
     <form action="Controller/Login.php" method="post">
 			<input type="hidden" name="tipo" value="Login">
-      <input required type="text" class="pesquisa w3-input w3-border" name="login" placeholder="Login"></br>
-      <input required type="password" class="pesquisa w3-input w3-border" name="Senha" placeholder="Senha"></br>
+      <input required type="text" class="pesquisa w3-input w3-border" name="login" placeholder="Login"><br/>
+      <input required type="password" class="pesquisa w3-input w3-border" name="Senha" placeholder="Senha"><br/>
       <button type="submit" class="btn w3-btn w3-red w3-round" name="submeter">Entrar</button>
     </form>
 

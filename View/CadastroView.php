@@ -28,7 +28,7 @@
 	
 </head>
 <body>
-	<a href="HomePage.html"><button class="Fixar w3-btn w3-red">Voltar</button></a>
+<a href="../HomePage.html"><button class="Fixar w3-btn w3-red">Voltar</button></a>
 	<br/>
 	    
 	  <div class="Formulario">
@@ -47,7 +47,7 @@
 				$viewCheckbox->exibeTodos();
 			?>
 			</table>
-	      <button type="submit" class="btn w3-btn w3-red w3-round" name="submeter">Cadastrar</button>
+	      <button type="submit" class="btn w3-btn w3-red w3-round" >Cadastrar</button>
 	    </form>
 	  </div>
 		

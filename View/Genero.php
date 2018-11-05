@@ -1,3 +1,13 @@
+<?php
+	require_once "../Controller/verifica.php";
+	require_once "ExibeGenero.php";
+	require_once "../DAO/GeneroDAO.php";
+	require_once "../DAO/PreferenciaDAO.php";
+
+	$id_User = $_SESSION['ID'];
+	$viewGeneros = new ExibeGenero($id_User);
+?>
+
 <!DOCTYPE html5>
 <html>
 <head>
@@ -18,12 +28,12 @@
 			<nav>
 				<ul class="w3-navbar w3-red">
 					<a name="Preferencias"></a>
-					<li><a href="PaginaInicial.html" class="w3-grey"><img src="imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
-					<li><a href="PaginaInicial.html">Página Inicial</a></li>
-					<li><a href="Favoritos.html">Favoritos</a></li>
-					<li><a href="Recomendacoes.html">Recomendações</a></li>
-					<li><a href="Artistas.html">Artistas</a></li>
-					<li><a href="Genero.html">Gêneros Musicais</a></li>
+					<li><a href="PaginaInicial.php" class="w3-grey"><img src="imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
+					<li><a href="PaginaInicial.php">Página Inicial</a></li>
+					<li><a href="Favoritos.php">Favoritos</a></li>
+					<li><a href="Recomendacoes.php">Recomendações</a></li>
+					<li><a href="Artistas.php">Artistas</a></li>
+					<li><a href="Genero.php">Gêneros Musicais</a></li>
 					<li class="w3-right"><a href="#">Sair</a></li>	
 					<li class="w3-right"><a href="#">Nome Do Usuário </a></li>						
 				</ul>  
@@ -45,8 +55,14 @@
   <div id="Ranq" class="w3-background6 w3-container city w3-animate-opacity">
     	<!--Colocar com PHP uma quantidade Limitada de Artistas-->
       		<ul>
+
+				<?php
+						/* Generos Mais Badalados */
+					$viewGeneros->exibeMelhores();
+				?>
+						<!--
 				<li>
-					<!--Colocar com PHP os Artistas mais favoritados em Ordem-->
+					Colocar com PHP os Artistas mais favoritados em Ordem
 					<div class="component">
 							<img src="Images/Genero.jpg">
 						<h1>Rock</h1>
@@ -83,7 +99,7 @@
 								</nav>
 						</div>
 				</li>
-
+				-->
 				<li>
 						<!--Mais Gêneros-->
 
@@ -97,8 +113,13 @@
 
   <div id="Ordem" class=" w3-background3 w3-container city w3-animate-opacity" style="display:none">
     		<ul>
+				<?php
+						/* Generos Mais Badalados */
+					$viewGeneros->exibeOredemAlfabetica();
+				?>
+				<!--
 					<li>
-							<!--Colocar com PHP os Artistas mais favoritados em Ordem-->
+							Colocar com PHP os Artistas mais favoritados em Ordem
 							<div class="component">
 									<img src="Images/Genero.jpg">
 								<h1>Amador</h1>
@@ -137,6 +158,7 @@
 						</li>
 
 				<li>
+					-->
 					<!--Mais Gêneros com PHP em ordem Alfabetica-->
 				</li>
 

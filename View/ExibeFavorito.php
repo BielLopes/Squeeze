@@ -39,13 +39,13 @@ require_once "../DAO/FavoritoDAO.php";
                 ?>
                 <li>
 					<div class="component">
-						<img src="../Images/Artista.jpg">
+						<img src="Images/Artista.jpg">
 						<h1><?php echo $artista->getName();?></h1>
 						<form method="GET" action="../Controller/GerenciaFavoritos.php">
                             <input type="hidden" name="tipo" value="<?php echo $buton;?>">
                             <input type="hidden" name="id" value="<?php echo $artista->getId();?>">
 							<button class="btn2 w3-red" type="submit">
-								<img src="../Images/<?php echo $buton;?>.png">
+								<img src="Images/<?php echo $buton;?>.png">
 							</button>
 						</form>
 						<nav>
@@ -54,6 +54,9 @@ require_once "../DAO/FavoritoDAO.php";
 							  <li >Amigos que Favoritaram
 								<ul class="w3-ul w3-border">
                                 <?php
+                                    if(count($migos) == 0){
+                                        echo"<li>Nenhum Amigo Favoritou Esse Artista!</li>";
+                                    }
                                     foreach($migos as $nameMigo){
                                         echo"<li>$nameMigo</li>";
                                     }    

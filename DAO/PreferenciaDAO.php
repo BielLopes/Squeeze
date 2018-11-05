@@ -44,5 +44,23 @@
 			
 			return $preferencias;
 		}
+                                  
+		function migosPreferem($id_genero, $id_User){
+			$names = array();
+			try{
+				$conect = $this->conectar();
+                $query = "SELECT DISTINCT usuario.Nome AS `Name` FROM usuario inner join amigos on amigos.ID_Usuario = usuario.ID_Usuario INNER join preferencia on preferencia.ID_Usuario = amigos.ID_Usuario where amigos.ID_Usuario2 =$id_User AND preferencia.ID_Genero = $id_genero";
+				$rs = $conect->query($query);
+				$conect->close();
+				while($row = mysqli_fetch_assoc($rs)){
+					$nome = $row['Name'];
+					array_push($names, $nome);
+				}
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}
+			
+			return $names;
+		}
 		
     }

@@ -1,3 +1,14 @@
+<?php
+  require_once "../Controller/verifica.php";
+  require_once "ExibeFavorito.php";
+  require_once "../DAO/GeneroDAO.php";
+
+  $id_User = $_SESSION['ID'];
+
+  $viewFavoritos = new ExibeFavorito($id_User);
+  define('qtnFavoritos', 10000);
+?>
+
 <!DOCTYPE html5>
 <html>
 <head>
@@ -17,12 +28,12 @@
         <nav>
           <ul class="w3-navbar w3-red">
               <a name="Preferencias"></a>
-            <li><a href="PaginaInicial.html" class="w3-grey"><img src="imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
-            <li><a href="PaginaInicial.html">Página Inicial</a></li>
-            <li><a href="Favoritos.html">Favoritos</a></li>
-            <li><a href="Recomendacoes.html">Recomendações</a></li>
-            <li><a href="Artistas.html">Artistas</a></li>
-            <li><a href="Genero.html">Gêneros Musicais</a></li>
+            <li><a href="PaginaInicial.php" class="w3-grey"><img src="imagens/logo.png" style="width:24px;margin-bottom:-2px;"></a></li>
+            <li><a href="PaginaInicial.php">Página Inicial</a></li>
+            <li><a href="Favoritos.php">Favoritos</a></li>
+            <li><a href="Recomendacoes.php">Recomendações</a></li>
+            <li><a href="Artistas.php">Artistas</a></li>
+            <li><a href="Genero.php">Gêneros Musicais</a></li>
             <li class="w3-right"><a href="#">Sair</a></li>	
             <li class="w3-right"><a href="#">Nome Do Usuário </a></li>						
           </ul>
@@ -39,6 +50,11 @@
       <section class="container UltimosFavorit">
           <div>
             <ul>
+
+            <?php
+				      $viewFavoritos->exibeX(qtnFavoritos);
+			      ?>
+              <!--
               <li>
                 <div class="component">
                   <img src="Images/Artista.jpg">
@@ -88,8 +104,9 @@
                 </div>
               </li>
               <li>
-                <!--Mais artista colocados dinâmicamente-->
+                Mais artista colocados dinâmicamente
               </li>
+              -->
             </ul> 
             <br/>
             <br/>
