@@ -60,55 +60,11 @@
 						/* Generos Mais Badalados */
 					$viewGeneros->exibeMelhores();
 				?>
-						<!--
-				<li>
-					Colocar com PHP os Artistas mais favoritados em Ordem
-					<div class="component">
-							<img src="Images/Genero.jpg">
-						<h1>Rock</h1>
 						
-						<nav>
-								<ul >
-								  <li >Amigos que Preferem
-									<ul class="w3-ul w3-border">
-										<li>Jão das couves</li>
-										<li>Jãozinho</li>
-										<li>Jé Pequeno</li>
-									</ul>
-								  </li>
-							  </ul>
-							</nav>
-					</div>
-				</li>
-					
-				<li>
-						<div class="component">
-								<img src="Images/Genero.jpg">
-							<h1>Pesadão</h1>
-							
-							<nav>
-									<ul >
-									  <li >Amigos que Preferem
-										<ul class="w3-ul w3-border">
-											<li>Jão das couves</li>
-											<li>Jãozinho</li>
-											<li>Jé Pequeno</li>
-										</ul>
-									  </li>
-								  </ul>
-								</nav>
-						</div>
-				</li>
-				-->
-				<li>
-						<!--Mais Gêneros-->
-
-				</li>
 			</ul>
 			<br/>
 			<br/>
 			  <br/>
-			</div>
   </div>
 
   <div id="Ordem" class=" w3-background3 w3-container city w3-animate-opacity" style="display:none">
@@ -117,56 +73,11 @@
 						/* Generos Mais Badalados */
 					$viewGeneros->exibeOredemAlfabetica();
 				?>
-				<!--
-					<li>
-							Colocar com PHP os Artistas mais favoritados em Ordem
-							<div class="component">
-									<img src="Images/Genero.jpg">
-								<h1>Amador</h1>
-								
-								<nav>
-										<ul >
-										  <li >Amigos que Preferem
-											<ul class="w3-ul w3-border">
-												<li>Jão das couves</li>
-												<li>Jãozinho</li>
-												<li>Jé Pequeno</li>
-											</ul>
-										  </li>
-									  </ul>
-									</nav>
-							</div>
-						</li>
-							
-						<li>
-								<div class="component">
-										<img src="Images/Genero.jpg">
-									<h1>Classica</h1>
-									
-									<nav>
-											<ul >
-											  <li >Amigos que Preferem
-												<ul class="w3-ul w3-border">
-													<li>Jão das couves</li>
-													<li>Jãozinho</li>
-													<li>Jé Pequeno</li>
-												</ul>
-											  </li>
-										  </ul>
-										</nav>
-								</div>
-						</li>
-
-				<li>
-					-->
-					<!--Mais Gêneros com PHP em ordem Alfabetica-->
-				</li>
-
+		
 			</ul>
 			<br/>
 			<br/>
 			  <br/>
-			</div>
   </div>
   <script>
   function openC(cityName) {

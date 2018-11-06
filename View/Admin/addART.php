@@ -1,3 +1,6 @@
+<?php
+	require_once "../../Controller/verifica2.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>

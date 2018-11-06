@@ -24,12 +24,10 @@ require_once "../DAO/GeneroDAO.php";
             $todosArtista = $this->acessoFavoritos->allArtistasDosMigos();
             $this->acessoGenero = new GeneroDAO();
             $bol = FALSE;
+            $i = 0;
             $buton = "";
             $genero = "";
             $migos = array();
-            if(count($todosArtista) == 0){
-                echo "<li><h1 style=\"text-align: center;\">Nenhum Artista Cadastrado</h1></li>";
-            }
             foreach($todosArtista as $artista){
                 $bol = $this->acessoFavoritos->isFavorited($artista->getId());
                 if($bol){
@@ -71,7 +69,11 @@ require_once "../DAO/GeneroDAO.php";
 					</div>
 				</li>
                 <?php
+                $i++;
+            }
 
+            if($i == 0){
+                echo "<li><h1 style=\"text-align: center;\">Nenhuma Recomendação Por Amigo</h1></li>";
             }
         }
 
@@ -82,12 +84,10 @@ require_once "../DAO/GeneroDAO.php";
             $this->acessoGenero = new GeneroDAO();
             $this->acessoArtistas = new ArtistaDAO();
             $bol = FALSE;
+            $i = 0;
             $buton = "";
             $genero = "";
             $migos = array();
-            if(count($prefernciaSelected) == 0){
-                echo "<li><h1 style=\"text-align: center;\">Nenhum Artista Cadastrado</h1></li>";
-            }
             foreach($prefernciaSelected as $id_pref){
                 $todosArtista = $this->acessoArtistas->doGenero($id_pref);
                 
@@ -133,8 +133,12 @@ require_once "../DAO/GeneroDAO.php";
                         </div>
                     </li>
                     <?php
-    
+                    $i++;
                 }
+            }
+
+            if($i == 0){
+                echo "<li><h1 style=\"text-align: center;\">Nenhuma Recomendação Por Preferência</h1></li>";
             }
         }
     }

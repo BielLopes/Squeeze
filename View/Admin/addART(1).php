@@ -1,4 +1,6 @@
-
+<?php
+	require_once "../../Controller/verifica2.php";
+?>
 <?php
 	
 	$Name = filter_input(INPUT_POST, 'nome');

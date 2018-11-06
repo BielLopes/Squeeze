@@ -22,6 +22,17 @@
             $logaUser = $logaDao->buscarPorLogin($login);
 
             if($senha == $logaUser->getSenha()){
+
+                if($logaUser->getIdUser() <= 4){
+                    /*Iniciando Uma Seção Para o Admin*/
+                    session_start();
+                    $_SESSION['Usuario'] = $logaUser;
+                    $_SESSION['ID'] = $logaUser->getIdUser();
+                    $_SESSION['Senha'] = $logaUser->getSenha();
+                    $_SESSION['Login'] = $logaUser->getLogin();
+                    echo "<script>location.href='../View/Admin/Admin.php';</script>";
+
+                }
                 
                 /*Iniciando Uma Seção Para o Usuário*/
                 session_start();

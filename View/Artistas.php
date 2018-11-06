@@ -49,7 +49,7 @@
 	<section id="AtalhoPesquisa" >
   <div class="w3-bar w3-border-bottom w3-light-grey intronav">
     <ul class="w3-navbar w3-card-3 w3-white ">
-      <li ><a onclick="openC('Ranq')">Os Mais Badalados</a></li>
+      <li><a onclick="openC('Ranq')">Os Mais Badalados</a></li>
       <li><a onclick="openC('Ordem')">Em Ordem</a></li>
     </ul>
   </div>
@@ -63,69 +63,11 @@
 					$viewArtistas->exibeMelhores();
 				?>
 					
-				<!--<li>
-					Colocar com PHP os Artistas mais favoritados em Ordem
-					<div class="component">
-                  		<img src="Images/Artista.jpg">
-                  		<h1>Pitty</h1>
-                  		<form method="GET">
-                    		<input type="hidden" name="id" value="PHP">
-                    		<button class="btn2 w3-red" type="submit">
-                      		<img src="Images/deslike.png">
-                    		</button>
-                  		</form>
-			            <nav>
-                    		<ul >
-                      			<li>Gênero: PHP</li>	
-                      			<li >
-								Amigos que Favoritaram
-                      			<ul class="w3-ul w3-border">
-                        			<li>Jão das couves</li>
-                        			<li>Jãozinho</li>
-                        			<li>Jé Pequeno</li>
-                      			</ul>
-                      			</li>
-                    		</ul>
-                  		</nav>
-                	</div>
-				</li>
-					<div class="component">
-						<img src="Images/Artista.jpg">
-						<h1>Da Leste</h1>
-						<form method="GET">
-						  <input type="hidden" name="id" value="PHP">
-						  <button class="btn2 w3-red" type="submit">
-							<img src="Images/deslike.png">
-						  </button>
-						</form>
-					  <nav>
-						  <ul >
-								<li>Gênero: PHP</li>	
-								<li >
-							  Amigos que Favoritaram
-								<ul class="w3-ul w3-border">
-								  <li>Jão das couves</li>
-								  <li>Jãozinho</li>
-								  <li>Jé Pequeno</li>
-								</ul>
-								</li>
-						  </ul>
-						</nav>
-				  </div>
-				<li>
-
-				</li>
-			-->
-				<li>
-					
-						<!--Mais Atistas-->
-
-				</li>
+	
 			</ul>
 			<br/>
 			<br/>
 			  <br/>
-			</div>
   </div>
 
   <div id="Ordem" class=" w3-background5 w3-container city w3-animate-opacity" style="display:none">
@@ -134,68 +76,10 @@
 					/* Artista Em Oredem */
 					$viewArtistas->exibeOredemAlfabetica();
 				?>
-					<!--
-				<li>
-							<div class="component">
-								<img src="Images/Artista.jpg">
-								<h1>Annita</h1>
-								<form method="GET">
-								  <input type="hidden" name="id" value="PHP">
-								  <button class="btn2 w3-red" type="submit">
-									<img src="Images/like.png">
-								  </button>
-								</form>
-							  <nav>
-								  <ul >
-										<li>Gênero: PHP</li>	
-										<li >
-									  Amigos que Favoritaram
-										<ul class="w3-ul w3-border">
-										  <li>Jão das couves</li>
-										  <li>Jãozinho</li>
-										  <li>Jé Pequeno</li>
-										</ul>
-										</li>
-								  </ul>
-								</nav>
-						  	</div>
-				</li>
-				<li>
-							<div class="component">
-								<img src="Images/Artista.jpg">
-								<h1>Catra</h1>
-								<form method="GET">
-								  <input type="hidden" name="id" value="PHP">
-								  <button class="btn2 w3-red" type="submit">
-									<img src="Images/like.png">
-								  </button>
-								</form>
-							  <nav>
-								  <ul >
-										<li>Gênero: PHP</li>	
-										<li >
-									  Amigos que Favoritaram
-										<ul class="w3-ul w3-border">
-										  <li>Jão das couves</li>
-										  <li>Jãozinho</li>
-										  <li>Jé Pequeno</li>
-										</ul>
-										</li>
-								  </ul>
-								</nav>
-						  	</div>
-				</li>
-				-->
-
-				<li>
-					<!--Mais Artistas com PHP em ordem Alfabetica-->
-				</li>
-
-			</ul>
+		</ul>				
 			<br/>
 			<br/>
 			  <br/>
-			</div>
   </div>
   <script>
   function openC(cityName) {

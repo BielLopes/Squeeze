@@ -27,6 +27,7 @@
             if(count($todosArtista) == 0){
                 echo "<li><h1 style=\"text-align: center;\">Nenhum Artista Cadastrado</h1></li>";
             }
+           
             foreach($todosArtista as $artista){
                 $bol = $this->acessoFavoritos->isFavorited($artista->getId());
                 if($bol){
@@ -74,7 +75,7 @@
 
         function exibeOredemAlfabetica(){
             $this->acessoArtista = new ArtistaDAO($this->ID_User);
-            $this->acessoFavoritos = new FavoritaDAO($this->ID_User);
+            $this->acessoFavoritos = new FavoritoDAO($this->ID_User);
             $todosArtista = $this->acessoArtista->ordemAlfabetica();
             $this->acessoGenero = new GeneroDAO();
             $bol = FALSE;
@@ -84,7 +85,7 @@
             if(count($todosArtista) == 0){
                 echo "<li><h1 style=\"text-align: center;\">Nenhum Artista Cadastrado</h1></li>";
             }
-            foreach($todosFavoritos as $artista){
+            foreach($todosArtista as $artista){
                 $bol = $this->acessoFavoritos->isFavorited($artista->getId());
                 if($bol){
                     $buton = "deslike";

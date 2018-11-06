@@ -1,3 +1,7 @@
+<?php
+	require_once "../../Controller/verifica2.php";
+?>
+
 <!DOCTYPE html>
 
 <html wtx-context="51DE4C06-ED48-4358-8D1E-B337B653AC13"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

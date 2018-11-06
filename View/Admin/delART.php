@@ -1,4 +1,8 @@
 <?php
+	require_once "../../Controller/verifica2.php";
+?>
+
+<?php
 		$host = 'localhost';
         $usuario = 'root';
         $senha = '';

@@ -1,14 +1,36 @@
+<?php
+	require_once "../../Controller/verifica2.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Squeeze Admin</title>
 	<link rel="stylesheet" href="../CSS/Admin.css" type="text/css">	
+	<link rel="stylesheet" href="../CSS/confirma.css" type="text/css">	
 	<link rel="stylesheet" href="../Fontes/stylesheet.css" type="text/css">
 	<link rel="stylesheet" href="../CSS/w3.css" type="text/css">
 	<meta charset="UTF-8">
 </head>
 <body>
-	<h1>Pagina do Admin</h1>
+	<!--Deslogar-->
+			<div id="exit" class="w3-modal">
+				<div class="Formular">
+					<span onclick="sumir('exit')" class="w3-closebtn">&times;</span>
+					<h1>Você tem certeza que deseja Deslogar?</h1>
+					<form action="../../Controller/LogOut.php" method="post">
+						<input type="hidden" name="logout" value="true">
+						<button class="btn5 w3-btn w3-blue" action="">Sair</button>
+						<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('exit')">Cancelar</button>
+					</form>
+				</div>
+			</div>
+
+<button style="text-decoration: none; text-align: left;margin-left:1%;" onclick="aparecer('exit')" class="Fixar w3-red w3-btn">Sair</button>
+
+
+<section style="text-align: center; ">
+	<h1 style="font-family: 'Topzera';font-size: 70px">Pagina do Admin</h1>
 	<p>Adicione um artista</p>
 	<form class="Adicionar" action="addART(1).php" method="post" >
 		<input class="input w3-input" type="text" name="nome" placeholder="Nome"><br>
@@ -46,7 +68,7 @@
 			?>
 			</select>
   		<br>
-		<input type="submit" value="Enviar">
+		  <button class="btn-add w3-btn w3-red" type="submit">Adicionar</button><br>
 	</form>
 
 
@@ -116,7 +138,7 @@
 		<p>Adicione um Gênero</p>
 	<form class="Adicionar" action="addGEN.php" method="post" >
 		<input class="input w3-input" type="text" name="Genero" placeholder="Gênero"><br>
-		<button class="btn-add w3-btn w3-red" action="">Adicionar</button><br>
+		<button class="btn-add w3-btn w3-red" type="submit">Adicionar</button><br>
 	</form>
 	<p>Todos os Gêneros</p>
 	
@@ -167,7 +189,18 @@
 
 	?>
 	<br/>
-	<button style="text-decoration: none;" class="w3-red w3-btn"><a href="">Sair</a></button>
-
+	<br/>
+	<br/>
+</section>
+	<script language="Javascript">
+		function sumir(i) {
+			document.getElementById(i).style.display = "none";
+		}
+		
+		function aparecer(i) {
+			document.getElementById(i).style.display = "initial";
+		
+		}
+	</script>
 </body>
 </html>
