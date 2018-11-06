@@ -15,9 +15,9 @@
 			<h1>Você tem certeza que deseja excluir isso?</h1>
 			<form action="../Admin/delGEN.php" method="post">
 				<input type="hidden" name="IDG" value="<?php echo $ID ?>">
-				<button class="btn5 w3-btn w3-blue" type="submit">Deletar</button>
-				<a href="../Admin/Admin.php"><button class="btn5 w3-btn w3-blue" type="reset">Cancelar</button></a>
+				<button class="btn5 w3-btn w3-blue" type="submit">Deletar</button>				
 			</form>
+			<a href="../Admin/Admin.php"><button class="btn5 w3-btn w3-blue" type="reset">Cancelar</button></a>
 		</div>
 </body>
 </html>

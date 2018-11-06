@@ -104,6 +104,14 @@
       }
       document.getElementById(cityName).style.display = "block";
   }
+  function sumir(i) {
+		document.getElementById(i).style.display = "none";
+	}
+
+	function aparecer(i) {
+		document.getElementById(i).style.display = "initial";
+
+	}
   </script>
 			
 	</section>

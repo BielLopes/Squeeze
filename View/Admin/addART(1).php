@@ -22,11 +22,16 @@
 				$sql = "INSERT INTO artista (Nome,ID_Genero) SELECT '$Name', ID_Genero FROM genero WHERE Nome = '$Genero'";
 			
 				if($conn->query($sql)){
-					echo "New Record Inserted";
+					$conn->close();
+					echo "<script>alert('Adicionado com sucesso!');</script>";
+					echo "<script>location.href='Admin.php';</script>";
 				}else{
+					$conn->close();
 					echo "Error: ". $sql. "<br>". $conn->error;
+					echo "<script>alert('Falha ao Adicionar!');</script>";
+					echo "<script>location.href='Admin.php';</script>";
+					
 				}
-				$conn->close();
 			}
 
 		}else{

@@ -79,7 +79,16 @@
               <br/>
             </div>  
       </section>   
-      
+<script>
+  function sumir(i) {
+		document.getElementById(i).style.display = "none";
+	}
+
+	function aparecer(i) {
+		document.getElementById(i).style.display = "initial";
+
+	}
+</script>      
   
 
 </body>
