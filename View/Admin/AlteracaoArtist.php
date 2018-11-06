@@ -26,7 +26,7 @@
 	<form action="alteraART.php" method="post">
 		<p>Id do Artista : <?php echo "$ID"; ?></p>
 		<input type="hidden" name="ID_Artista" value="<?php echo "$ID"; ?>">
-		<input class="pesquisa" type="text"  name ="nome" placeholder="Nome" value="<?php echo "$nome"; ?>"><br>
+		<input maxlength="20" class="pesquisa" type="text"  name ="nome" placeholder="Nome" value="<?php echo "$nome"; ?>"><br>
 		<h3>Gênero Do Artista:</h3>
 		  <select class="pesquisa" name="Generos">
 			  <!--Alocar todos os gêneros cadastrados-->

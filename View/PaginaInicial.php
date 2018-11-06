@@ -113,7 +113,7 @@
 				<li><a href="Artistas.php">Artistas</a></li>
 				<li><a href="Genero.php">Gêneros Musicais</a></li>
 				<li class="w3-right"><a onclick="aparecer('exit')">Sair</a></li>	
-				<li class="w3-right"><a href="#"><?php  echo $_SESSION['Name']; ?> </a></li>						
+				<li class="w3-right"><a ><?php  echo $_SESSION['Name']; ?> </a></li>						
 			</ul>
 			
 		</nav>

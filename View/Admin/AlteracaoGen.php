@@ -25,7 +25,7 @@
 	<h2>Dados do Genero</h2>
 	<form action="alteraGEN.php" method="post">
 		<p>Id do Genero : <?php echo "$ID"; ?></p>
-		<input type="hidden" name="IDG" value="<?php echo "$ID"; ?>">
+		<input maxlength="20" type="hidden" name="IDG" value="<?php echo "$ID"; ?>">
 		<input class="pesquisa" type="text"  name ="nome" placeholder="Nome" value="<?php echo "$nome"; ?>"><br>
   		<br/>
 		<button class="btn1 w3-btn w3-blue" type="submit">Alterar</button><br>

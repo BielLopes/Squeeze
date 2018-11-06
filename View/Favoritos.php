@@ -14,6 +14,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="Css/Comunit.css" type="text/css">
+  <link rel="stylesheet" href="Css/Confirma.css" type="text/css">
   <link rel="stylesheet" href="Css/components.css" type="text/css">
   <link rel="stylesheet" href="Css/reset.css" type="text/css">
   <link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
@@ -21,6 +22,23 @@
   <title>Favoritos</title>
 </head>
 <body class="Fundo">
+	<!--Deslogar-->
+    <div id="exit" class="w3-modal">
+				<div class="Formular">
+					<span onclick="sumir('exit')" class="w3-closebtn">&times;</span>
+					<h1>Você tem certeza que deseja Deslogar?</h1>
+					<form action="../Controller/LogOut.php" method="post">
+						<input type="hidden" name="logout" value="true">
+						<button class="btn5 w3-btn w3-blue" action="">Sair</button>
+						<button class="btn5 w3-btn w3-blue" type="reset" onclick="sumir('exit')">Cancelar</button>
+					</form>
+				</div>
+			</div>
+
+			
+
+
+
     <div id="BackToTop">
         <a href="#Top"><img src="Images/backtotop.png"></a>
       </div>
@@ -34,8 +52,8 @@
             <li><a href="Recomendacoes.php">Recomendações</a></li>
             <li><a href="Artistas.php">Artistas</a></li>
             <li><a href="Genero.php">Gêneros Musicais</a></li>
-            <li class="w3-right"><a href="#">Sair</a></li>	
-            <li class="w3-right"><a href="#">Nome Do Usuário </a></li>						
+            <li class="w3-right"><a onclick="aparecer('exit')">Sair</a></li>	
+				  <li class="w3-right"><a ><?php  echo $_SESSION['Name']; ?> </a></li>						
           </ul>
           
         </nav>
@@ -52,61 +70,9 @@
             <ul>
 
             <?php
+              //Exibindo até 10000 favoritos
 				      $viewFavoritos->exibeX(qtnFavoritos);
 			      ?>
-              <!--
-              <li>
-                <div class="component">
-                  <img src="Images/Artista.jpg">
-                  <h1>Pitty</h1>
-                  <form method="GET">
-                    <input type="hidden" name="id" value="PHP">
-                    <button class="btn2 w3-red" type="submit">
-                      <img src="Images/deslike.png">
-                    </button>
-                  </form>
-                  <nav>
-                    <ul >
-                      <li>Gênero: PHP</li>	
-                      <li >Amigos que Favoritaram
-                      <ul class="w3-ul w3-border">
-                        <li>Jão das couves</li>
-                        <li>Jãozinho</li>
-                        <li>Jé Pequeno</li>
-                      </ul>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </li>
-              <li>
-                <div class="component">
-                  <img src="Images/Artista.jpg">
-                  <h1>Mc Biel</h1>
-                  <form method="GET">
-                    <input type="hidden" name="id" value="PHP">
-                    <button class="btn2 w3-red" type="submit">
-                      <img src="Images/deslike.png">
-                    </button>
-                  </form>
-                  <nav>
-                    <ul >
-                      <li>Gênero: PHP</li>	
-                      <li >Amigos que Favoritaram
-                      <ul class="w3-ul w3-border">
-                        <li>Jão das couves</li>
-                        <li>Jãozinho</li>
-                        <li>Jé Pequeno</li>
-                      </ul>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </li>
-              <li>
-                Mais artista colocados dinâmicamente
-              </li>
-              -->
             </ul> 
             <br/>
             <br/>

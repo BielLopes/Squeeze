@@ -33,7 +33,7 @@
 	<h1 style="font-family: 'Topzera';font-size: 70px">Pagina do Admin</h1>
 	<p>Adicione um artista</p>
 	<form class="Adicionar" action="addART(1).php" method="post" >
-		<input class="input w3-input" type="text" name="nome" placeholder="Nome"><br>
+		<input maxlength="20" class="input w3-input" type="text" name="nome" placeholder="Nome"><br>
 
 
 		<br>
@@ -137,7 +137,7 @@
 
 		<p>Adicione um Gênero</p>
 	<form class="Adicionar" action="addGEN.php" method="post" >
-		<input class="input w3-input" type="text" name="Genero" placeholder="Gênero"><br>
+		<input maxlength="20" class="input w3-input" type="text" name="Genero" placeholder="Gênero"><br>
 		<button class="btn-add w3-btn w3-red" type="submit">Adicionar</button><br>
 	</form>
 	<p>Todos os Gêneros</p>
