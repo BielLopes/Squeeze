@@ -7,7 +7,7 @@
 <head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="../Fontes/stylesheet.css" type="text/css">
-        <link rel="stylesheet" href="../CSS/Admin.css" type="text/css">
+        <link rel="stylesheet" href="../Css/Admin.css" type="text/css">
 		<link rel="stylesheet" href="../Css/w3.css" type="text/css">
 		<link rel="stylesheet" href="../Css/AlteraArtist.css" type="text/css">
 		<link rel="stylesheet" href="../Css/Confirma.css" type="text/css">
