@@ -48,6 +48,10 @@
 	<link rel="stylesheet" href="Css/reset.css" type="text/css">
 	<link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
 	<link rel="stylesheet" href="Css/w3.css" type="text/css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+
+	<script type="text/javascript" src="Scripts/Comunit.js"></script>
+	<script type="text/javascript" src="Scripts/Amigos.js"></script>
 	<title>Inicial</title>
 </head>
 <body class="Fundo">
@@ -65,6 +69,18 @@
 					</form>
 				</div>
 			</div>
+
+
+
+		<!--
+		Coisas que poderiam ser implementadas utilizando-se Ajax:
+			1 - Todos esses Avissos poderiam ser Acionados Assincronamente (Senha, Preferancias).
+			2 - Amigos Poderiam ser Pesquisados(feito)/Adicionados/Removidos sem que seja necessário
+				recarre apágina.
+			3 - Para Desfavoritar Assincronamente acho que o mais simples a ser feito é amterar
+				a imagem do campo. Para se retirar todo o Card uma solução mais robusta deve ser
+				implementada
+		-->
 		<!--Alterar Senha-->
 		<div id="Alterada" class="w3-modal">
 			<div class="Formular">
@@ -182,24 +198,31 @@
 			</ul>
 		</div>
 		<div id="formMigos">
-			<form method="POST" action="#pesquisar">
-				<input type="hidden" name="tipo" value="pesquisaMigos">
-				<input id="pesquisa2" type="text" name="pesq" class="pesquisaMigos w3-border" placeholder="Pesquisar" required>
-				<a href="#pesquisar"  ><input type="submit" value="Pesquisar" class="btn_search"></a>
-				<!--onclick="aparecer('resultado')"-->
+			<!--<form method="POST" action="#pesquisar">
+				<div style="width: 70%; margin-left: 15%;" class="input-group mb-3 ">
+  					<input onkeyup="pesquisaMigos();" id="ajaxMigos" type="text" class="form-control" placeholder="Nome Do Usuario" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  					<div class="input-group-append" style=" margin-rigth: 20%;">
+    					<button onclick="aparecer('resultado');pesquisaMigos();" style="border-radius: 0 10px 10px 0; boder: none;" class=" btn-outline-secondary" type="button" id="pesqMigos">Pesquisar</button>
+  					</div>
+				</div>
+-->
+				<input id="pesquisa2"  onkeyup="aparecer('resultado');pesquisaMigos();" type="text" name="pesq" class="pesquisaMigos w3-border" placeholder="Pesquisar" required>
+				<a href="#pesquisar"  ><input type="submit" onclick="aparecer('resultado');pesquisaMigos();"  value="Pesquisar" class="btn_search"></a>
 				<a name="pesquisar"></a>
-			</form>
+			<!--</form>-->
 		</div>
 		<div id="resultado" class="AmigosDisplay" >
+		<!--
 		<?php
 			
 				echo "<a href=\"#Migos\"><span onclick=\"sumir('resultado')\" class=\"y3\">x</span></a>";
 			
 		?>
+		
 			<h2>Pesquisa</h2><br/>
 			
 
-			<!--<a href="#Migos"><span onclick="sumir('resultado')" class="y3">x</span></a>-->
+			<a href="#Migos"><span onclick="sumir('resultado')" class="y3">x</span></a>
 			<ul class="w3-ul w3-border w3-hoverable">
 			<?php
 			/*Colocando Pesquisa*/
@@ -215,6 +238,7 @@
 			?>
 
 			</ul>
+		-->
 		</div>
 	</section>
 	<a name="InfCadastradas"></a>
@@ -263,6 +287,7 @@
 			
 	</section>			
 	<script language="Javascript">
+		/*
 		function sumir(i) {
 			document.getElementById(i).style.display = "none";
 		}
@@ -271,6 +296,7 @@
 			document.getElementById(i).style.display = "initial";
 		
 		}
+		*/
 	</script>
 </body>
 </html>

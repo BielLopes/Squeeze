@@ -81,7 +81,7 @@
 	<br/>
 	<p>Pesquisar Artistas</p>
 	<div style="width: 70%; margin-left: 15%;" class="input-group mb-3">
-  		<input onkeyup="buscarArtista()" id="ajaxArtista" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's 	username" aria-describedby="basic-addon2">
+  		<input onkeyup="buscarArtista()" id="ajaxArtista" type="text" class="form-control" placeholder="Artista" aria-label="Recipient's 	username" aria-describedby="basic-addon2">
   		<div class="input-group-append">
     		<button onclick="buscarArtista()" class="btn btn-outline-secondary" type="button" id="UsarAjax2">Pesquisar</button>
   		</div>
@@ -174,7 +174,7 @@
 
 	<p>Pesquisar Gêneros</p>
 	<div style="width: 70%; margin-left: 15%;" class="input-group mb-3">
-  		<input onkeyup="buscarGenero()" id="ajaxGenero" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's 	username" aria-describedby="basic-addon2">
+  		<input onkeyup="buscarGenero()" id="ajaxGenero" type="text" class="form-control" placeholder="Genero" aria-label="Recipient's 	username" aria-describedby="basic-addon2">
   		<div class="input-group-append">
     		<button onclick="buscarGenero()" class="btn btn-outline-secondary" type="button" id="UsarAjax2">Pesquisar</button>
   		</div>
