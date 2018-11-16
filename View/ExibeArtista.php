@@ -94,18 +94,18 @@
                 }
                 $genero = $this->acessoGenero->retornaNomePorID($artista->getId_Genero());
                 $migos = $this->acessoFavoritos->migosFavoritaram($artista->getId());
+                $tip = "tip";
+                $order = "ordem";
                 ?>
                 <li>
-					<div class="component">
+					<div class="component" id="<?php echo $artista->getId(); echo $order;?>">
 						<img src="Images/Artista.jpg">
 						<h1><?php echo $artista->getName();?></h1>
-						<form method="GET" action="../Controller/GerenciaFavoritos.php">
-                            <input type="hidden" name="tipo" value="<?php echo $buton;?>">
-                            <input type="hidden" name="id" value="<?php echo $artista->getId();?>">
-							<button class="btn2 w3-red" type="submit">
-								<img src="Images/<?php echo $buton;?>.png">
-							</button>
-						</form>
+                        <input type="hidden" id="<?php echo $artista->getId(); echo $tip;?>" name="tipo" value="<?php echo $buton;?>">
+                        <input type="hidden" name="id" value="<?php echo $artista->getId();?>">
+                        <button class="btn2 w3-red" onclick="reloadArt('<?php echo $artista->getId(); echo $order;?>', '<?php echo $artista->getId(); echo $tip;?>', '<?php echo $artista->getId();?>');">
+                            <img src="Images/<?php echo $buton;?>.png">
+                        </button>
 						<nav>
 							<ul >
 							  <li>Gênero: <?php echo $genero;?></li>	

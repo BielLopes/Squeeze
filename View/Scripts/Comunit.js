@@ -7,13 +7,24 @@ function aparecer(i) {
 
 }
 
+function openC(cityName) {
+	var i;
+	var x = document.getElementsByClassName("city");
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";
+	}
+	document.getElementById(cityName).style.display = "block";
+}
+
 
 function openAjax(){
 	var ajax = null;
 
 	try{
+		// Firefox, Opera 8.0+, Safari
 		ajax = new XMLHttpRequest;
 	}catch(erro){
+		// Internet Explorer
 		try{
 			ajax = new ActiveXObject("Msxl2.XMLHTTP");
 		}catch(er){

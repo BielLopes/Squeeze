@@ -75,7 +75,7 @@ function buscarGenero(){
 		if(termo.length >= 0){
 			var ajax = openAjax();
 			ajax.open("GET", "buscaGenero.php?gener="+termo, true);
-			ajax.onreadystatechange = function(){
+			ajax.onreadystatechange = function(){	
 			
 				if(ajax.readyState == 1){
 					exibeResult.innerHTML = '<tr><td>Carregando ...</td><td>Carregando ...</td><td>Carregando ...</td><td>Carregando ...</td></tr>';

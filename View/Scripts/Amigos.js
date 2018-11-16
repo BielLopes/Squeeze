@@ -1,23 +1,3 @@
-function openAjax(){
-	var ajax = null;
-
-	try{
-		ajax = new XMLHttpRequest;
-	}catch(erro){
-		try{
-			ajax = new ActiveXObject("Msxl2.XMLHTTP");
-		}catch(er){
-			try{
-				ajax = new ActiveXObject("Microsoft.XMLHTTP");
-			}catch(err){
-				ajax = false;
-			}
-		}
-	}
-
-	return ajax;
-}// Detecta dinamicamente o objeto XMLHttp (de acordo com o navegador)
-
 function pesquisaMigos(){
 	if(document.getElementById){//Varifica se a funca getById funciona
 		var termo = document.getElementById('pesquisa2').value;

@@ -80,4 +80,22 @@
 			
 			return $artistas;
         }
+
+        function porId($id){
+            $artista = null;
+            try{
+				$conect = $this->conectar();
+                $query = "SELECT ID_Artista AS `ID`, Nome AS `Name`, ID_Genero FROM `artista` where ID_Artista=$id";
+				$rs = $conect->query($query);
+				$conect->close();
+				$row = mysqli_fetch_assoc($rs);
+				$artista = new Artista($row['Name'], $row['ID'], $row['ID_Genero']);
+
+			}catch(Exception $ex){
+				echo $ex->getFile().' : '.$ex->getLine().' : '.$ex->getMessage();
+			}
+			
+			return $artista;
+
+        }
     }

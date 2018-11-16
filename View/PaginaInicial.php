@@ -48,7 +48,7 @@
 	<link rel="stylesheet" href="Css/reset.css" type="text/css">
 	<link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
 	<link rel="stylesheet" href="Css/w3.css" type="text/css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+
 
 	<script type="text/javascript" src="Scripts/Comunit.js"></script>
 	<script type="text/javascript" src="Scripts/Amigos.js"></script>
@@ -77,9 +77,10 @@
 			1 - Todos esses Avissos poderiam ser Acionados Assincronamente (Senha, Preferancias).
 			2 - Amigos Poderiam ser Pesquisados(feito)/Adicionados/Removidos sem que seja necessário
 				recarre apágina.
-			3 - Para Desfavoritar Assincronamente acho que o mais simples a ser feito é amterar
+			3 - Para Desfavoritar Assincronamente acho que o mais simples a ser feito é almterar
 				a imagem do campo. Para se retirar todo o Card uma solução mais robusta deve ser
-				implementada
+				implementada. Resposta: Foi criado um método para recarregar toda a div que contem 
+										o card do Artista. Olhar em: Scripts/favorita.js
 		-->
 		<!--Alterar Senha-->
 		<div id="Alterada" class="w3-modal">

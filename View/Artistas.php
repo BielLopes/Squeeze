@@ -20,6 +20,9 @@
   	<link rel="stylesheet" href="Css/reset.css" type="text/css">
   	<link rel="stylesheet" href="Fontes/stylesheet.css" type="text/css">
   	<link rel="stylesheet" href="Css/w3.css" type="text/css">
+
+	<script type="text/javascript" src="Scripts/Comunit.js"></script>
+	<script type="text/javascript" src="Scripts/favorita.js"></script>
 	<title>Artistas</title>
 </head>
 <body class="Fundo">
@@ -98,6 +101,7 @@
 			<br/>
 			  <br/>
   </div>
+  <!--
   <script>
   function openC(cityName) {
       var i;
@@ -116,7 +120,7 @@
 
 	}
   </script>
-			
+			-->
 	</section>
 </body>
 </html>
