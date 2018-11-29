@@ -14,10 +14,25 @@
 	Desabilita os warning e erros:
 	error_reporting(0);
 	ini_set('display_errors', FALSE);
-*/
+
+	Abilita todo tipo de mensagem de erro!
+	ini_set('display_errors',1);
+	ini_set('display_startup_erros',1);
+	error_reporting(E_ALL);
+
+	É muito importante ressaltar que em tempo de desenvolvimento é de extrema importância
+	habilitar a maior quantidades de erros possivel, pois cria mais uma maneira de validar
+	um código cada vez mais limpo e funcional, que é um dos problemas que os desenvolvedores
+	reclaman do PHP, pois não explicita um erro que está ocorrendo, o que, a longo prazo,
+	pode gerar maus funcionamentos. Apenas na fase de produção de softwere, quando já está
+	em posse do Cliente se torna interessante tais ocultamento de reporting.
+	Para abilitar os erros do servidor o código abaixo pode ser útil:
 	$id_User = $_SESSION['ID'];
 	$prefDAO = new PreferenciaDAO();
 	$minhasPreferen = $prefDAO->preferenciasDoUsuario($id_User);
+
+	bem como ṕode não haver compatibilidade da tag do PHP simplificada <??> , uma solucão e passar a configuração short_open_tag = On
+	*/
 
 	$viewCheckbox = new ExibeCheckbox();
 
